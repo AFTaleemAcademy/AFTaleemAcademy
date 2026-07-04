@@ -1,0 +1,794 @@
+body{
+  margin:0;
+  margin-right:0;
+  padding-top:0;
+  padding-bottom:0px;
+  background:#fff;
+}
+
+
+
+.menu{
+  font-size:30px;
+  margin-left:20px;
+  margin-top:10px;
+}
+.logo{
+  width:37px;
+  height:37px;
+  text-align:center;
+  background:#15803d;
+  color:white;
+  font-size:22px;
+  border:none;
+  border-radius:51%;
+  margin-top:12px;
+  margin-left:20px;
+  font-weight:bold;
+}
+
+.dark-mod{
+  width:10;
+  height:30px;
+  margin-top:17px;
+  margin-left:75px;
+  font-size:35px;
+  border:none;
+  background:rgba(255,255,255,0.8)
+}
+.login{
+  margin-left:10px;
+  margin-top:20px;
+  width:90px;
+  height:30px;
+  font-size:18px;
+  background:#15803d;
+  border:none;
+  border-radius:12px;
+  color:white;
+}
+.hero{
+  display:block;
+}
+.masjid{
+width:100%;
+height:100vh;
+display:block;
+}
+  .uper{
+    width:280px;
+    position:absolute;
+    top:170px;
+    left:20px;
+    background:#Dcdcdc;
+    text-shadow:2px 2px 20px white;
+    border:none;
+    border-radius:8px;
+    color:white;
+    font-size:16px;
+  }
+  .line{
+    position:absolute;
+    top:220px;
+    left:20px;
+    font-size:30px;
+    font-weight:bold;
+    color:#55efc4
+  }
+  span{
+    color:#15803d;
+  }
+.uper1{
+    position:absolute;
+    top:330px;
+    left:20px;
+    font-size:20px;
+   color:#fff;
+  font-family: "Noto Nastaliq Urdu", serif;
+  font-weight:bold;
+  text-shadow:1px 1px 20px white;
+}
+.uper2{
+  position:absolute;
+  top:530px;
+  left:20px;
+  font-size:20px;
+  color:#55efc4;
+  text-shadow:1px 1px 20px #fff;
+}
+.start-btn{
+  position:absolute;
+  top:610px;
+  left:20px;
+  width:160px;
+  padding:16px;
+  border:none;
+  background:#16b47f;
+  border-radius:25px;
+  color:white;
+  font-size:15px;
+  text-shadow:1px 1px 10px white;
+}
+.uper3{
+  position:absolute;
+  top:675px;
+  left:20px;
+  width:190px;
+  padding:18px;
+  color:white;
+  border:1px solid white;
+  border-radius:25px;
+  background:rgba(0,0,0,0.4);
+  text-shadow:1px 1px 10px white;
+}
+p{
+  margin-top:60px;
+  margin-left:20px;
+  color:#0a6b5d;
+}
+.uper-1{
+  margin-top:10px;
+  margin-left:40px;
+  font-size:26px;
+  
+}
+.dasha-bord{
+  width:300px;
+  padding:40px;
+  margin-left:25px;
+  margin-top:20px;
+  background:#15803d;
+  border-radius:20px;
+}
+.line1{
+  color:white;
+  font-weight:bold;
+  font-size:28px;
+}
+.line2{
+  color:white;
+  margin-top:20px;
+}
+.btn{
+  width:160px;
+  margin-top:15px;
+  margin-left:20px;
+  padding:12px;
+   border-radius:25px;
+   border:none;
+   color:green;
+}
+.container{
+  border:2px solid #dff5ec;
+  width:350px;
+  padding:12px;
+  margin-left:30px;
+  margin-top:25px;
+  border-radius:20px;
+  transition:0.3s;
+  text-decoration:none;
+  
+}
+.book-logo{
+  margin-left:15px;
+  border:none;
+  width:35px;
+  text-align:center;
+  padding:10px;
+  color:white;
+  border-radius:15px;
+  background:#14A84d;
+  font-size:30px;
+  box-shadow:0px 0px 5px #dcdcdc;
+}
+.book-logo1{
+  background:#1a738a;
+  margin-left:20px;
+  width:35px;
+  padding:12px;
+  border-radius:15px;
+  text-align:center;
+  color:white;
+}
+.book-logo2{
+  background:#15803d;
+  margin-left:20px;
+  width:35px;
+  padding:12px;
+  border-radius:15px;
+  text-align:center;
+  color:white;
+}
+.book-logo3{
+  background:#0069b4;
+  margin-left:20px;
+  width:35px;
+  padding:12px;
+  border-radius:15px;
+  text-align:center;
+  color:white;
+}
+.book-logo4{
+  background:#a1640a;
+  margin-left:20px;
+  width:35px;
+  padding:12px;
+  border-radius:15px;
+  text-align:center;
+  color:white;
+}
+.book-logo5{
+  background:#954535;
+  margin-left:20px;
+  width:35px;
+  padding:12px;
+  border-radius:15px;
+  text-align:center;
+  color:white;
+}
+.book-logo6{
+  background:#7b4fe4;
+  margin-left:20px;
+  width:35px;
+  padding:12px;
+  border-radius:15px;
+  text-align:center;
+  color:white;
+}
+.book-logo7{
+  background:#c2185b;
+  margin-left:20px;
+  width:35px;
+  padding:12px;
+  border-radius:15px;
+  text-align:center;
+  color:white;
+}
+.subject{
+  margin-left:15px;
+  margin-top:10px;
+  text-decoration:none;
+  color:black;
+}
+.text{
+  font-size:15px;
+  margin-top:20px;
+  color :#222222;
+  text-shadow:1px 1px 10px #dcdcdc;
+  text-decoration:none;
+}
+.explore{
+  margin-left:20px;
+  text-decoration:none;
+  color:#0a6b5d;
+}
+.container:hover{
+  transform:scale(1.06);
+  text-decoration:none;
+  box-shadow:10px 10px 20px black;
+  background:#dcdcdc;
+}
+.bottom-nav{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 65px;
+    background:rgba(255,255,255,0.9);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 -2px 15px rgba(0,0,0,.1);
+    z-index: 1000;
+    box-shadow:2px 2px 20px white;
+}
+
+.bottom-nav a{
+    text-decoration: none;
+    color: #0f9d58;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+}
+
+.bottom-nav i{
+    width: 24px;
+    height: 24px;
+    margin-bottom: 4px;
+}
+
+.bottom-nav a:hover{
+    color: #15803d;
+}
+
+
+
+/* ===========================
+   AF Taleem Academy Footer
+=========================== */
+
+.footer{
+    margin-top:50px;
+    background:linear-gradient(135deg,#0f4d2d,#146c43);
+    color:#fff;
+    text-align:center;
+    padding:40px 20px 25px;
+    border-top-left-radius:30px;
+    border-top-right-radius:30px;
+    box-shadow:0 -8px 20px rgba(0,0,0,.15);
+    margin-bottom:70px;
+}
+
+.footer h2{
+    margin:0;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.footer p{
+    margin:8px 0;
+    color:#e9f8ee;
+    font-size:15px;
+}
+
+.footer-social{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:18px;
+    margin:25px 0;
+    flex-wrap:wrap;
+}
+
+.footer-social a{
+    width:50px;
+    height:50px;
+    background:#fff;
+    color:#146c43;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:24px;
+    text-decoration:none;
+    transition:.3s;
+    box-shadow:0 5px 15px rgba(0,0,0,.25);
+}
+
+.footer-social a:hover{
+    transform:translateY(-6px) scale(1.1);
+    background:#ffd54f;
+    color:#000;
+}
+
+.footer-contact{
+    margin-top:20px;
+    line-height:1.9;
+}
+
+.footer-contact p{
+    font-size:16px;
+}
+
+.copyright{
+    margin-top:25px;
+    border-top:1px solid rgba(255,255,255,.25);
+    padding-top:15px;
+    font-size:13px;
+    color:#d8f3dc;
+}
+
+/* Mobile Responsive */
+
+@media(max-width:600px){
+
+.footer{
+    padding:35px 15px 20px;
+}
+
+.footer h2{
+    font-size:23px;
+}
+
+.footer-social a{
+    width:45px;
+    height:45px;
+    font-size:21px;
+}
+
+.footer-contact p{
+    font-size:14px;
+}
+
+}
+.hading{
+  text-align:center;
+  font-size:30px;
+  color:#15803d;
+}
+.dua-list{
+      display:none;
+      margin-left:0px;
+    }
+    
+    .dua1-detail{
+      display:none;
+      background:#14A84d;
+      
+    }
+    .kalima-list{
+      display:none;
+    }
+    .container{
+    cursor:pointer;
+    transition:0.35s ease;
+    animation:floatBox 5s ease-in-out infinite;
+}
+
+.container:hover{
+    transform:translateY(-8px) scale(1.05);
+    box-shadow:0 15px 35px rgba(24,18088,64801,.3950);
+    color:white;
+}
+
+@keyframes floatBox{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-9px);
+    }
+}
+
+.dua1-detail{
+    display:none;
+    overflow:hidden;
+    max-height:0;
+    opacity:0;
+    transform:translateY(-15px);
+    transition:.5s ease;
+    background:linear-gradient(135deg,#16666d,#26662c);
+    color:white;
+    border-radius:18px;
+    margin-top:8px;
+    padding:0 18px;
+}
+
+.dua1-detail.active{
+    display:block;
+    max-height:1200px;
+    opacity:1;
+    transform:translateY(0);
+    padding:18px;
+    animation:popup .5s ease;
+}
+
+@keyframes popup{
+    0%{
+        opacity:0;
+        transform:scale(.9);
+    }
+    100%{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+
+
+/* सभी बॉल */
+.ball{
+    position:absolute;
+    border-radius:50%;
+    opacity:.18;
+}
+
+/* पहली */
+.ball1{
+    width:160px;
+    height:160px;
+    background:#4ade80;
+    animation:move1 10s linear infinite;
+}
+
+/* दूसरी */
+.ball2{
+    width:120px;
+    height:120px;
+    background:#60a5fa;
+    animation:move2 12s linear infinite;
+}
+
+/* तीसरी */
+.ball3{
+    width:90px;
+    height:90px;
+    background:#facc15;
+    animation:move3 8s linear infinite;
+}
+
+
+/* Animation */
+
+@keyframes move1{
+0%{top:-40px;left:-40px;}
+25%{top:-40px;right:-40px;left:auto;}
+50%{bottom:-40px;right:-40px;top:auto;}
+75%{bottom:-40px;left:-40px;right:auto;}
+100%{top:-40px;left:-40px;bottom:auto;}
+}
+
+@keyframes move2{
+0%{top:20px;right:-30px;}
+25%{bottom:20px;right:-30px;top:auto;}
+50%{bottom:20px;left:-30px;right:auto;}
+75%{top:20px;left:-30px;bottom:auto;}
+100%{top:20px;right:-30px;left:auto;}
+}
+
+@keyframes move3{
+0%{top:50%;left:-20px;}
+25%{top:-20px;left:50%;}
+50%{top:50%;right:-20px;left:auto;}
+75%{bottom:-20px;right:50%;top:auto;}
+100%{top:50%;left:-20px;bottom:auto;}
+}
+
+
+
+/* अंदर के बॉक्स */
+.container::before,
+.container::after{
+    content:"";
+    position:absolute;
+    width:90px;
+    height:90px;
+    border-radius:20px;
+    background:rgba(272,1683,74,0.192);
+    animation:moveBox 22s linear infinite;
+}
+
+/* दूसरा बॉक्स */
+.container::after{
+    width:60px;
+    height:60px;
+    background:rgba(59,130,246,0.12);
+    animation:moveBox2 20s linear infinite;
+}
+
+/* तीसरा बॉक्स */
+.container span.bg-box{
+    position:absolute;
+    width:45px;
+    height:45px;
+    background:rgba(255,193,7,0.15);
+    border-radius:14px;
+    top:20px;
+    left:20px;
+    animation:moveBox3 26s linear infinite;
+    z-index:0;
+}
+
+/* ऊपर का टेक्स्ट */
+.container > *{
+    position:relative;
+    z-index:2;
+    color:#0a6b5d;
+    text-decoration:none;
+}
+
+/* Animation 1 */
+@keyframes moveBox{
+    0%{top:10px;left:10px;}
+    25%{top:10px;left:75%;}
+    50%{top:70%;left:75%;}
+    75%{top:70%;left:10px;}
+    100%{top:10px;left:10px;}
+}
+
+/* Animation 2 */
+@keyframes moveBox2{
+    0%{bottom:10px;right:10px;}
+    25%{bottom:10px;right:75%;}
+    50%{bottom:70%;right:75%;}
+    75%{bottom:70%;right:10px;}
+    100%{bottom:10px;right:10px;}
+}
+
+/* Animation 3 */
+@keyframes moveBox3{
+    0%{top:20px;left:20px;}
+    25%{top:20px;left:80%;}
+    50%{top:80%;left:80%;}
+    75%{top:80%;left:20px;}
+    100%{top:20px;left:20px;}
+}
+@keyframes movBox{
+0%{top:50%;left:-20px;}
+25%{top:-20px;left:50%;}
+50%{top:50%;right:-20px;left:auto;}
+75%{bottom:-20px;left:50%;top:auto;}
+100%{top:50%;left:-20px;bottom:auto;}
+}
+.container,
+.dua1-btn,
+.kalima-btn,
+.dua-btn,
+button,
+a{
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+}
+
+
+
+
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:60px;
+    background:rgba(255,255,255,.9);
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 12px;
+    box-sizing:border-box;
+    z-index:10000;
+}
+.menu{
+    font-size:30px;
+    margin:0;
+}
+
+.logo{
+    margin:0 10px;
+}
+
+.navbar h1{
+    flex:1;
+    font-size:20px;
+    margin:0 10px;
+}
+
+.theme-btn{
+    margin-right:10px;
+}
+
+.login{
+    margin:0;
+}
+
+
+
+/* Dark Mode */
+
+body.dark{
+    background:#0f172a;
+    color:#fff;
+}
+
+body.dark .navbar{
+    background:#111827;
+}
+
+body.dark .container{
+    background:#1e293b;
+    border-color:#334155;
+}
+
+body.dark .subject{
+    color:#fff;
+}
+
+body.dark .text{
+    color:#d1d5db;
+}
+
+body.dark .explore{
+    color:#4ade80;
+}
+
+body.dark p{
+    color:#cbd5e1;
+}
+
+body.dark .bottom-nav{
+    background:#111827;
+}
+
+body.dark .bottom-nav a{
+    color:#fff;
+}
+
+body.dark .footer{
+    background:#0b1120;
+}
+.dua{
+    top:30px;
+    background:pink;
+}
+
+
+
+
+
+
+.sidebar{
+position:fixed;
+left:-280px;
+top:0;
+width:280px;
+height:100%;
+background:#fff;
+transition:.35s;
+box-shadow:0 0 25px rgba(0,0,0,.25);
+padding-top:70px;
+z-index:9999;
+}
+
+.sidebar a{
+display:block;
+padding:18px 25px;
+text-decoration:none;
+color:#222;
+font-size:18px;
+font-weight:600;
+transition:.3s;
+}
+
+.sidebar a:hover{
+background:#0d6efd;
+color:#fff;
+padding-left:35px;
+}
+
+.close{
+position:absolute;
+top:15px;
+right:20px;
+font-size:35px;
+cursor:pointer;
+}
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 280px;
+    height: 100%;
+    background: #ffffff;
+    box-shadow: 5px 0 20px rgba(0,0,0,.2);
+    transition: .4s;
+    z-index: 9999;
+    padding-top: 70px;
+}
+
+.sidebar a{
+    display:block;
+    padding:18px 25px;
+    text-decoration:none;
+    color:#222;
+    font-size:18px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.sidebar a:hover{
+    background:#0d6efd;
+    color:white;
+    padding-left:35px;
+}
+
+.close{
+    position:absolute;
+    top:15px;
+    right:20px;
+    font-size:35px;
+    cursor:pointer;
+}

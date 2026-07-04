@@ -1,0 +1,713 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Library - AF Taleem Academy</title>
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+    /* ==========================
+   AF Taleem Academy Library
+   Part 2 - CSS
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f4f8f7;
+    color:#222;
+    padding-bottom:40px;
+}
+
+/* ---------- Header ---------- */
+
+.header{
+    margin-top:60px;
+    position:stick;
+    top:0px;
+    z-index:1000;
+    background:#15803d;
+    backdrop-filter:blur(15px);
+    padding:18px;
+    box-shadow:0 4px 20px rgba(0,0,0,.08);
+}
+
+.header h1{
+    
+    color:#fff;
+    text-align:center;
+}
+
+/* ---------- Search ---------- */
+
+.search-box{
+    position:relative;
+}
+
+.search-box input{
+    width:100%;
+    height:52px;
+    border:none;
+    outline:none;
+    border-radius:40px;
+    padding-left:20px;
+    padding-right:55px;
+    font-size:17px;
+    background:#eef7f1;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.search-box i{
+    position:absolute;
+    right:20px;
+    top:16px;
+    color:#15803d;
+    font-size:20px;
+}
+
+/* ---------- Grid ---------- */
+
+.book-grid{
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+}
+/* ---------- Card ---------- */
+
+.book-card{
+    position:relative;
+    overflow:hidden;
+    background:white;
+    border-radius:22px;
+    padding:22px;
+    cursor:pointer;
+    transition:.35s;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+/* Moving Glow */
+
+.book-card::before{
+    content:"";
+    position:absolute;
+    width:170px;
+    height:170px;
+    background:rgba(34,197,94,.12);
+    border-radius:30px;
+    top:-70px;
+    left:-70px;
+    animation:moveOne 10s linear infinite;
+}
+
+.book-card::after{
+    content:"";
+    position:absolute;
+    width:120px;
+    height:120px;
+    background:rgba(59,130,246,.10);
+    border-radius:25px;
+    bottom:-55px;
+    right:-55px;
+    animation:moveTwo 12s linear infinite;
+}
+
+/* Content */
+
+.book-card>*{
+    position:relative;
+    z-index:2;
+}
+
+.book-icon{
+    width:70px;
+    height:70px;
+    border-radius:20px;
+    background:linear-gradient(135deg,#16a34a,#0ea5e9);
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:30px;
+    margin-bottom:18px;
+    box-shadow:10px 10px 25px white;
+}
+
+.book-card h2{
+    font-size:22px;
+    color:#111;
+    margin-bottom:10px;
+}
+
+.book-card p{
+    color:#666;
+    line-height:1.6;
+    margin-bottom:2px;
+}
+
+.read-btn{
+    display:inline-block;
+    text-decoration:none;
+    background:#15803d;
+    color:white;
+    padding:12px 22px;
+    border-radius:30px;
+    transition:.3s;
+    font-weight:bold;
+}
+
+.read-btn:hover{
+    background:#020;
+}
+
+/* Hover */
+
+.book-card:hover{
+    transform:translateY(-12px) scale(1.03);
+    box-shadow:0 20px 40px #0a6b5d;
+}
+
+/* Floating */
+
+@keyframes moveOne{
+
+0%{
+transform:translate(0,0) rotate(0deg);
+}
+
+25%{
+transform:translate(180px,0) rotate(90deg);
+}
+
+50%{
+transform:translate(180px,220px) rotate(180deg);
+}
+
+75%{
+transform:translate(0,220px) rotate(270deg);
+}
+
+100%{
+transform:translate(0,0) rotate(360deg);
+}
+
+}
+
+@keyframes moveTwo{
+
+0%{
+transform:translate(0,0);
+}
+
+25%{
+transform:translate(-140px,0);
+}
+
+50%{
+transform:translate(-140px,-180px);
+}
+
+75%{
+transform:translate(0,-180px);
+}
+
+100%{
+transform:translate(0,0);
+}
+
+}
+
+/* Responsive */
+
+@media(max-width:600px){
+
+.header h1{
+font-size:24px;
+}
+
+.book-grid{
+grid-template-columns:1fr;
+padding:15px;
+}
+
+.book-card{
+padding:18px;
+}
+
+}
+/* Fade Animation */
+
+.book-card{
+    opacity:0;
+    transform:translateY(40px);
+    transition:.6s;
+}
+
+.book-card.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* Ripple */
+
+.ripple{
+    position:absolute;
+    width:20px;
+    height:20px;
+    background:rgba(255,255,255,.6);
+    border-radius:50%;
+    transform:translate(-50%,-50%);
+    animation:ripple .7s linear;
+    pointer-events:none;
+}
+
+@keyframes ripple{
+
+0%{
+width:0;
+height:0;
+opacity:1;
+}
+
+100%{
+width:400px;
+height:400px;
+opacity:0;
+}
+
+}
+    /* Dark Mode */
+
+body.dark{
+    background:#0f172a;
+    color:#fff;
+}
+
+body.dark .navbar{
+    background:#111827;
+}
+
+body.dark .container{
+    background:#1e293b;
+    border-color:#334155;
+}
+
+body.dark .subject{
+    color:#fff;
+}
+
+body.dark .text{
+    color:#d1d5db;
+}
+
+body.dark .explore{
+    color:#4ade80;
+}
+
+body.dark p{
+    color:#cbd5e1;
+}
+
+body.dark .bottom-nav{
+    background:#111827;
+}
+
+body.dark .bottom-nav a{
+    color:#fff;
+}
+
+body.dark .footer{
+    background:#0b1120;
+}
+</style>
+
+
+
+</head>
+
+<body>
+<div class="navbar">
+    <div class="menu" onclick="openMenu()">☰</div>
+
+<div id="sidebar" class="sidebar">
+  <span class="close" onclick="closeMenu()">×</span>
+
+  <a href="index.html">🏠 Home</a>
+  <a href="book.html">📚 Books</a>
+  <a href="notes.html">📝 Notes</a>
+  <a href="profile.html">👤 Profile</a>
+  <a href="settings.html">⚙️ Settings</a>
+  <a href="contact.html">📞 Contact</a>
+  <a href="about.html">ℹ️ About</a>
+  <a href="login.html">🚪 Logout</a>
+</div>
+    <button class="logo"> AF</button>
+    <h1>AF Taleem Academy</h1>
+<button id="themeToggle" class="theme-btn">
+  <i data-lucide="moon-star"></i>
+</button>
+    <button class="login">️Login</button>
+    </div>
+
+
+
+<!-- HEADER -->
+
+<header class="header container">
+    <h1>📚  Shehzada Library</h1>
+    <p>Choose your favourite book and start learning</p>
+
+    <div class="search-box">
+    <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input
+        type="text"
+        id="searchInput"
+        placeholder="Search Books...">
+    </div>
+</header>
+
+<!-- BOOK LIST -->
+
+<section class="books" id="bookList">
+
+<div class="book-card container">
+<div class="icon"><i data-lucide="book-open"></i></div>
+
+<h2>Noorani Qaida</h2>
+<p>Arabic Reading Basics</p>
+<a href="books/nooraniqaida.pdf">Read Book →</a>
+</div>
+<div class="book-card container">
+<div class="icon"><i data-lucide="book"></i></div>
+<h2>Quran Majeed</h2>
+<p>Holy Quran</p>
+<a href="books/quran.pdf">Read Book →</a>
+</div>
+
+<div class="book-card container">
+<div class="icon"><i data-lucide="languages"></i></div>
+<h2>Urdu</h2>
+<p>Reading & Grammar</p>
+<a href="#">Read Book →</a>
+</div>
+
+<div class="book-card container">
+<div class="icon"><i data-lucide="languages"></i></div>
+<h2>Arabic</h2>
+<p>Arabic Language</p>
+<a href="#">Read Book →</a>
+</div>
+
+<div class="book-card container">
+<div class="icon"><i data-lucide="moon-star"></i></div>
+<h2>Islamiyat</h2>
+<p>Islamic Studies</p>
+<a href="#">Read Book →</a>
+</div>
+
+<div class="book-card container">
+<div class="icon"><i data-lucide="book-text"></i></div>
+<h2>Hadith</h2>
+<p>Sayings of Prophet ﷺ</p>
+<a href="#">Read Book →</a>
+</div>
+
+<div class="book-card container">
+<div class="icon"><i data-lucide="scroll-text"></i></div>
+<h2>Tafseer</h2>
+<p>Explanation of Quran</p>
+<a href="#">Read Book →</a>
+</div>
+
+<div class="book-card container">
+<div class="icon"><i data-lucide="hand-heart"></i></div>
+<h2>Dua & Kalima</h2>
+<p>Daily Supplications</p>
+<a href="dualist.html">Read Book →</a>
+</div>
+
+<div class="book-card container">
+<div class="icon"><i data-lucide="laptop"></i></div>
+<h2>Computer Basics</h2>
+<p>Digital Learning</p>
+<a href="#">Read Book →</a>
+</div>
+
+<div class="book-card container">
+<div class="icon"><i data-lucide="graduation-cap"></i></div>
+<h2>English</h2>
+<p>Speak English</p>
+<a href="#">Read Book →</a>
+</div>
+
+<div class="book-card container">
+<div class="icon"><i data-lucide="brain"></i></div>
+<h2>Artificial Intelligence</h2>
+<p>AI Learning</p>
+<a href="#">Read Book →</a>
+</div>
+
+<div class="book-card container">
+<div class="icon"><i data-lucide="monitor"></i></div>
+<h2>HTML</h2>
+<p>Web Development</p>
+<a href="#">Read Book →</a>
+</div>
+
+<div class="book-card container">
+<div class="icon"><i data-lucide="code"></i></div>
+<h2>CSS</h2>
+<p>Website Design</p>
+<a href="#">Read Book →</a>
+</div>
+
+<div class="book-card container">
+<div class="icon"><i data-lucide="file-code"></i></div>
+<h2>JavaScript</h2>
+<p>Programming</p>
+<a href="#">Read Book →</a>
+</div>
+
+<div class="book-card container">
+<div class="icon"><i data-lucide="database"></i></div>
+<h2>SQL</h2>
+<p>Database</p>
+<a href="#">Read Book →</a>
+</div>
+
+<div class="book-card container">
+<div class="icon"><i data-lucide="shield"></i></div>
+<h2>Cyber Security</h2>
+<p>Security Basics</p>
+<a href="#">Read Book →</a>
+</div>
+
+<div class="book-card container">
+<div class="icon"><i data-lucide="smartphone"></i></div>
+<h2>Android</h2>
+<p>Mobile Development</p>
+<a href="#">Read Book →</a>
+</div>
+
+<div class="book-card container">
+<div class="icon"><i data-lucide="network"></i></div>
+<h2>Networking</h2>
+<p>Computer Network</p>
+<a href="#">Read Book →</a>
+</div>
+
+<div class="book-card container">
+<div class="icon"><i data-lucide="server"></i></div>
+<h2>Linux</h2>
+<p>Operating System</p>
+<a href="#">Read Book →</a>
+</div>
+
+<div class="book-card container">
+<div class="icon"><i data-lucide="star"></i></div>
+<h2>General Knowledge</h2>
+<p>Knowledge Book</p>
+<a href="#">Read Book →</a>
+</div>
+
+</section>
+
+
+
+
+<nav class="bottom-nav">
+
+  <a href="index.html">
+    <i data-lucide="book-open"></i>
+    <span>Home</span>
+  </a>
+
+  <a href="book.html">
+    <i data-lucide="book-open"></i>
+    <span>Books</span>
+  </a>
+
+  <a href="notes.html">
+    <i data-lucide="notebook-text"></i>
+    <span>Notes</span>
+  </a>
+
+  <a href="contact.html">
+    <i data-lucide="message-circle"></i>
+    <span>Contact</span>
+  </a>
+
+  <a href="language.html">
+    <i data-lucide="languages"></i>
+    <span>Language</span>
+  </a>
+</nav>
+
+<footer class="footer">
+
+  <h2>AF Taleem Academy</h2>
+  <p>Empowering Islamic & Modern Education</p>
+
+  <div class="footer-social">
+
+    <a href="https://www.instagram.com/reel/DZzn-EHvjmA/?igsh=MWpmMWg2eHY1ZmZwbg==" target="_blank">
+      <i class="fab fa-instagram"></i>
+    </a>
+
+    <a href="https://www.facebook.com/share/r/1BVbnJ1XZt/" target="_blank">
+      <i class="fab fa-facebook"></i>
+    </a>
+
+    <a href="https://youtu.be/vrA87h1bdTw?si=V1UQ-_d39p3C4S-Q" target="_blank">
+      <i class="fab fa-youtube"></i>
+    </a>
+
+    <a href="https://wa.me/918539985063" target="_blank">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <a href="mailto:aftaleemacademy@gmail.com">
+      <i class="fas fa-envelope"></i>
+    </a>
+
+    <a href="https://aftaleemacademy.com">
+      <i class="fas fa-globe"></i>
+    </a>
+
+  </div>
+
+  <div class="footer-contact">
+    <p>📞 91+ No not Available.
+    <p>📧  aftaleemacademy@gmail.com</p>
+    <p>🌐 www.aftaleemacademy.com</p>
+  </div>
+
+  <p class="copyright">
+    © 2026 AF Taleem Academy | All Rights Reserved
+  </p>
+
+</footer>
+
+
+<script src="books.js"></script>
+
+<script>
+lucide.createIcons();
+
+
+// ===============================
+// AF Taleem Academy Library
+// Part 3 - JavaScript
+// ===============================
+
+// Live Search
+const searchInput = document.getElementById("searchInput");
+const books = document.querySelectorAll(".book-card");
+
+searchInput.addEventListener("keyup", function () {
+
+    const value = this.value.toLowerCase();
+
+    books.forEach((book) => {
+
+        const text = book.innerText.toLowerCase();
+
+        if (text.includes(value)) {
+            book.style.display = "block";
+        } else {
+            book.style.display = "none";
+        }
+
+    });
+
+});
+
+// Ripple Effect
+books.forEach((card) => {
+
+    card.addEventListener("click", function (e) {
+
+        const ripple = document.createElement("span");
+
+        ripple.className = "ripple";
+
+        const rect = this.getBoundingClientRect();
+
+        ripple.style.left = (e.clientX - rect.left) + "px";
+        ripple.style.top = (e.clientY - rect.top) + "px";
+
+        this.appendChild(ripple);
+
+        setTimeout(() => {
+            ripple.remove();
+        }, 700);
+
+    });
+
+});
+
+// Fade Animation
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach((entry) => {
+
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+
+    });
+
+}, {
+    threshold: 0.2
+});
+
+books.forEach((book) => {
+    observer.observe(book);
+});
+
+// Smooth Scroll
+window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+});
+
+
+
+const btn = document.getElementById("themeToggle");
+
+btn.onclick = function(){
+
+    document.body.classList.toggle("dark");
+
+    if(document.body.classList.contains("dark")){
+        localStorage.setItem("theme","dark");
+    }else{
+        localStorage.setItem("theme","light");
+    }
+
+}
+
+if(localStorage.getItem("theme")=="dark"){
+    document.body.classList.add("dark");
+}
+function openMenu(){
+document.getElementById("sidebar").style.left="0";
+}
+
+function closeMenu(){
+document.getElementById("sidebar").style.left="-280px";
+}
+
+
+</script>
+
+</body>
+</html>
