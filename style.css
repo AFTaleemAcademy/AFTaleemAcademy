@@ -792,3 +792,797 @@ cursor:pointer;
     font-size:35px;
     cursor:pointer;
 }
+
+
+
+
+
+
+
+
+/* ==========================================
+   AF Taleem Academy
+   Professional CSS v2.0
+   Part 1A - Reset & Global Styles
+========================================== */
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap');
+
+/* Reset */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f5f7fb;
+    color:#222;
+    overflow-x:hidden;
+    transition:.35s ease;
+}
+
+/* ===========================
+   Color Variables
+=========================== */
+
+:root{
+
+    --primary:#15803d;
+    --primary-dark:#166534;
+    --secondary:#0ea5e9;
+    --accent:#f59e0b;
+
+    --success:#22c55e;
+    --danger:#ef4444;
+
+    --white:#ffffff;
+    --black:#111827;
+
+    --text:#1f2937;
+    --text-light:#6b7280;
+
+    --card:#ffffff;
+
+    --border:#e5e7eb;
+
+    --shadow:
+    0 10px 35px rgba(0,0,0,.08);
+
+    --radius:20px;
+
+}
+
+/* ===========================
+   Selection
+=========================== */
+
+::selection{
+    background:var(--primary);
+    color:#fff;
+}
+
+/* ===========================
+   Scrollbar
+=========================== */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#eef2f7;
+}
+
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(
+    to bottom,
+    #16a34a,
+    #0ea5e9
+    );
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#15803d;
+}
+
+/* ===========================
+   Links
+=========================== */
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* ===========================
+   Images
+=========================== */
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+/* ===========================
+   Buttons
+=========================== */
+
+button{
+
+    font-family:inherit;
+
+    cursor:pointer;
+
+    border:none;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+/* ===========================
+   Paragraph
+=========================== */
+
+p{
+
+    color:var(--text-light);
+
+    line-height:1.7;
+
+}
+
+/* ===========================
+   Heading
+=========================== */
+
+h1,
+h2,
+h3,
+h4,
+h5{
+
+    color:var(--text);
+
+    font-weight:700;
+
+}
+
+/* ===========================
+   Common Container
+=========================== */
+
+.wrapper{
+
+    width:min(1200px,92%);
+
+    margin:auto;
+
+}
+
+/* ===========================
+   Glass Effect
+=========================== */
+
+.glass{
+
+    background:rgba(255,255,255,.65);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.3);
+
+}
+
+/* ===========================
+   Floating Animation
+=========================== */
+
+@keyframes floating{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ===========================
+   Fade Animation
+=========================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ===========================
+   Pulse
+=========================== */
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.05);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+/* ==========================================
+   AF Taleem Academy
+   Professional CSS v2.0
+   Part 1B - Premium Navbar & Sidebar
+========================================== */
+
+/* ===========================
+   Navbar
+=========================== */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:70px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 18px;
+
+    background:rgba(255,255,255,.82);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(255,255,255,.35);
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+    z-index:9999;
+    transition:.35s ease;
+}
+
+/* ===========================
+   Menu Button
+=========================== */
+
+.menu{
+    font-size:30px;
+    color:var(--primary);
+    cursor:pointer;
+    transition:.3s;
+}
+
+.menu:hover{
+    transform:rotate(90deg) scale(1.1);
+    color:var(--secondary);
+}
+
+/* ===========================
+   Logo
+=========================== */
+
+.logo{
+    width:45px;
+    height:45px;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:linear-gradient(135deg,#16a34a,#0ea5e9);
+
+    color:#fff;
+
+    font-size:22px;
+    font-weight:700;
+
+    box-shadow:0 10px 20px rgba(22,163,74,.35);
+
+    transition:.35s;
+}
+
+.logo:hover{
+    transform:scale(1.08) rotate(8deg);
+}
+
+/* ===========================
+   Website Title
+=========================== */
+
+.navbar h1{
+    flex:1;
+    margin-left:15px;
+
+    font-size:20px;
+    font-weight:700;
+
+    color:var(--primary);
+
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+/* ===========================
+   Theme Button
+=========================== */
+
+.theme-btn{
+
+    width:42px;
+    height:42px;
+
+    margin-right:12px;
+
+    border-radius:50%;
+
+    background:#eef7f1;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:var(--primary);
+
+    transition:.3s;
+}
+
+.theme-btn:hover{
+
+    background:var(--primary);
+    color:#fff;
+
+    transform:rotate(180deg);
+
+}
+
+/* ===========================
+   Login Button
+=========================== */
+
+.login{
+
+    padding:10px 18px;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+    135deg,
+    #16a34a,
+    #0ea5e9);
+
+    color:#fff;
+
+    font-weight:600;
+
+    box-shadow:0 10px 20px rgba(22,163,74,.35);
+
+    transition:.3s;
+}
+
+.login:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 15px 30px rgba(22,163,74,.45);
+
+}
+
+/* ===========================
+   Sidebar
+=========================== */
+
+.sidebar{
+
+    position:fixed;
+
+    top:0;
+    left:-300px;
+
+    width:280px;
+    height:100vh;
+
+    background:#fff;
+
+    box-shadow:8px 0 35px rgba(0,0,0,.18);
+
+    transition:.4s ease;
+
+    z-index:10000;
+
+    overflow-y:auto;
+
+    padding-top:75px;
+
+}
+
+/* ===========================
+   Sidebar Links
+=========================== */
+
+.sidebar a{
+
+    display:flex;
+    align-items:center;
+
+    gap:12px;
+
+    padding:18px 28px;
+
+    font-size:17px;
+    font-weight:600;
+
+    color:#374151;
+
+    transition:.3s;
+}
+
+.sidebar a:hover{
+
+    background:linear-gradient(
+    90deg,
+    #16a34a,
+    #0ea5e9);
+
+    color:#fff;
+
+    padding-left:40px;
+
+}
+
+/* ===========================
+   Close Button
+=========================== */
+
+.close{
+
+    position:absolute;
+
+    top:18px;
+    right:22px;
+
+    font-size:34px;
+
+    cursor:pointer;
+
+    color:#666;
+
+    transition:.3s;
+
+}
+
+.close:hover{
+
+    color:#ef4444;
+
+    transform:rotate(180deg);
+
+}
+
+/* ===========================
+   Mobile Responsive
+=========================== */
+
+@media (max-width:768px){
+
+    .navbar{
+        height:65px;
+        padding:0 12px;
+    }
+
+    .navbar h1{
+        font-size:17px;
+    }
+
+    .logo{
+        width:40px;
+        height:40px;
+        font-size:20px;
+    }
+
+    .login{
+        padding:8px 15px;
+        font-size:14px;
+    }
+
+}
+/* ==========================================
+   AF Taleem Academy
+   Professional CSS v2.0
+   Part 1C - Premium Hero Section
+========================================== */
+
+/* ===========================
+   Hero Section
+=========================== */
+
+.hero{
+    position:relative;
+    width:100%;
+    min-height:100vh;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+}
+
+/* Hero Image */
+
+.masjid{
+    width:100%;
+    height:100vh;
+    object-fit:cover;
+    filter:brightness(.45);
+    animation:heroZoom 18s ease-in-out infinite alternate;
+}
+
+/* Dark Overlay */
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        135deg,
+        rgba(0,0,0,.65),
+        rgba(21,128,61,.35),
+        rgba(14,165,233,.25)
+    );
+    z-index:1;
+}
+
+/* ===========================
+   Hero Content
+=========================== */
+
+.uper,
+.line,
+.uper1,
+.uper2,
+.start-btn,
+.uper3{
+    position:absolute;
+    z-index:2;
+    animation:fadeUp .8s ease;
+}
+
+/* Top Badge */
+
+.uper{
+    top:130px;
+    left:25px;
+
+    padding:12px 18px;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    border-radius:50px;
+
+    color:#fff;
+    font-size:15px;
+    font-weight:600;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+/* Main Heading */
+
+.line{
+    top:205px;
+    left:25px;
+
+    font-size:42px;
+    font-weight:800;
+    line-height:1.2;
+
+    color:#fff;
+
+    text-shadow:0 5px 20px rgba(0,0,0,.45);
+}
+
+.line span{
+    color:#4ade80;
+}
+
+/* Urdu Text */
+
+.uper1{
+    top:340px;
+    left:25px;
+
+    max-width:90%;
+
+    font-family:"Noto Nastaliq Urdu",serif;
+
+    font-size:22px;
+    line-height:2;
+
+    color:#fff;
+
+    text-shadow:0 3px 12px rgba(0,0,0,.4);
+}
+
+/* English Text */
+
+.uper2{
+    top:520px;
+    left:25px;
+
+    max-width:90%;
+
+    font-size:18px;
+    color:#d1fae5;
+
+    line-height:1.7;
+}
+
+/* Start Button */
+
+.start-btn{
+    top:610px;
+    left:25px;
+
+    padding:15px 30px;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+        135deg,
+        #16a34a,
+        #0ea5e9
+    );
+
+    color:#fff;
+    font-size:16px;
+    font-weight:600;
+
+    box-shadow:0 15px 35px rgba(22,163,74,.35);
+
+    transition:.35s;
+}
+
+.start-btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 22px 45px rgba(14,165,233,.45);
+}
+
+/* Apply Button */
+
+.uper3{
+    top:680px;
+    left:25px;
+
+    padding:15px 28px;
+
+    border-radius:50px;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.35);
+
+    color:#fff;
+    font-size:16px;
+    font-weight:600;
+
+    transition:.35s;
+}
+
+.uper3:hover{
+    background:#fff;
+    color:var(--primary);
+    transform:translateY(-5px);
+}
+
+/* ===========================
+   Hero Animation
+=========================== */
+
+@keyframes heroZoom{
+
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(1.08);
+    }
+
+}
+
+/* ===========================
+   Mobile Responsive
+=========================== */
+
+@media (max-width:768px){
+
+    .line{
+        font-size:31px;
+        top:190px;
+    }
+
+    .uper1{
+        top:309px;
+        font-size:22px;
+    }
+
+    .uper2{
+        top:470px;
+        font-size:16px;
+    }
+
+    .start-btn{
+        top:570px;
+        padding:16px 14px;
+        font-size:15px;
+    }
+
+    .uper3{
+        top:635px;
+        padding:14px 20px;
+        font-size:15px;
+    }
+
+  }
