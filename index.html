@@ -1,262 +1,310 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>AF Taleem Academy</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <title>AF Taleem Academy</title>
+        
+        
   
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-</head>
-<body>
+    
 
+    </head>
+    <body>
+        
+        
 
-
-
-  <div class="navbar">
-  
- <div class="menu" onclick="openMenu()">☰</div>
+<div id="overlay" class="overlay" onclick="closeMenu()"></div>
 
 <div id="sidebar" class="sidebar">
-  <span class="close" onclick="closeMenu()">×</span>
 
-  <a href="index.html">🏠 Home</a>
-  <a href="book.html">📚 Books</a>
-  <a href="notes.html">📝 Notes</a>
-  <a href="profile.html">👤 Profile</a>
-  <a href="settings.html">⚙️ Settings</a>
-  <a href="contact.html">📞 Contact</a>
-  <a href="about.html">ℹ️ About</a>
-  <a href="login.html">🚪 Logout</a>
+    <span class="close" onclick="closeMenu()">✕</span>
+
+    <a href="index.html" class="active">
+        <i data-lucide="house"></i> Home
+    </a>
+
+    <a href="courses.html">
+        <i data-lucide="book-open"></i> Courses
+    </a>
+
+    <a href="dua.html">
+        <i data-lucide="book-open"></i> Dua
+    </a>
+
+    <a href="books.html">
+        <i data-lucide="book-open"></i> Books
+    </a>
+
+    <a href="notes.html">
+        <i data-lucide="file-text"></i> Notes
+    </a>
+
+    <a href="contact.html">
+        <i data-lucide="message-circle"></i> Contact
+    </a>
+
 </div>
+        
+        
+        
+        
+        
+        <div class="navbar">
+            <div class="left">
+            <div class="menu" onclick="openMenu()">≡</div>
+           <button class="logo">AF</button>
+            <h1 class="text1">AF Taleem Academy</h1>
+            </div>
+            <div class="right">
+            <div class="dark-btn">
+                <i data-lucide="moon"></i>
+            </div>
+            <button class="login">➔Login</button>
+            </div>
+        </div>
+        <div class="hero">
+                <div class="line">
+        <div class="line1" >️⚘️ Modern Islamic Learning Platform</div>
+        <div class="line2">WELCOME TO <span>AF <br>Taleem Academy</span>
+        </div>
+        <div class="line3">تعلیم ہی کامیابی کی پہلی سیڑھی ہے۔ آج ہی
 
+ہمارے ساتھ اپنے روشن مستقبل کا آغاز
 
+کریں ۔</div>
+<div class="line4">Learn Urdu Arabic Islamic Studies And <br>Computer Basics.</div>
+<button class="start-btn">Start Learning</button><br>
+<button class="admition-btn">Apply for Admissions</button>
+        </div></div>
+        
+        <p>OUR  COURSES</p>
+        <h2>Knowledge that shapes lives</h2>
+        <div class="box">
+    <a href="urdu.html" class="container">
+        <div class="sircle"></div>
+            <button class="logo1">
+                <i data-lucide="book-open"></i></button>
+                <h2 class="subject">Urdu اردو </h2>
+                <p class="sentence">Master Urdu Reading Writing and Grammer</p>
+     <div class="explore">Explore ➔</div>
+                </a>
+        
+        
+        <a href="arabic.html" class="container">
+            <div class="sircle1"></div>
+            <button class="logo2">
+                <i data-lucide="languages"></i></button>
+           <h2 class="subject">Arabic عربی</h2>
+           <p class="sentence">Learn Arabic-the language of Quran</p>
+           <div class="explore">Explore ➔</div></a>
+        
 
-
-
-
+        <a href="Islamiyat.html" class="container">
+            <div class="sircle2"></div>
+            <button class="logo3">
+        <i data-lucide="moon-star"></i>
+            </button>
+            <h2 class="subject">Islamiyat اسلامیات</h2>
+            <p class="sentence">Foundation of faith history of ethics</p>
+            <div class="explore">Explore ➔</div></a>
     
+        
+        <a href="computer.html" class="container">
+            <div class="sircle3"></div>
+          <button class="logo4">
+     <i data-lucide="laptop"></i></button>
+     <h2 class="subject">Computer کمپیوٹر</h2>
+     <p class="sentence">Computer basics for the digital generation</p>
+     <div class="explore">Explore➔</div>
+            </a>
+    
+            
+        <a href="Hadith.html" class="container">
+            <div class="sircle"></div>
+                <button class="logo5"><i data-lucide="hand-heart"></i></button>
+         <h2 class="subject">Hadith حدیث</h2>
+         <p class="sentence">Saying of prophet Mohammad ﷺ</p>
+         <div class="explore">Explore ➔</div></a>
+            
+        
+        
+        <a href="ai.html" class="container">
+            <div class="sircle4"></div>
+         <button class="logo6">
+        <i data-lucide="cpu"></i>
+        </button>
+        <h2 class="subject">Artificial  Intelligence</h2>
+    <p class="sentence">Modern Ai-Concept.tools and Applications</p>
+       <div class="explore">Explore➔</div>
+            </a>
+    
+        
+        
+        <a href="English.html" class="container">
+            <div class="sircle5"></div>
+            <button class="logo7">
+<i data-lucide="graduation-cap"></i></button>
+<h2 class="subject">English</h2>
+<p class="sentence">Speak and write Confidently in English</p>
+<div class="explore">Explore➔</div>
+            </a>
+        
+        
+        
+   <a href="dua.html" class="container">
+       <div class="sircle"></div>
+           <button class="logo8">
+         <i data-lucide="hand-heart"></i>
+           </button>
+           <h2 class="subject">Dua & Kalima دعا۔ کلمہ</h2>
+           <p class="sentence">Essential Supplication and the six Kalimas"></p>
+    <div class="explore">Explore ➔</div>
+       </a>
+ 
+ 
+ 
+ 
+ <a href="tafseer.html" class="container">
+     <div class="sircle4"></div>
+     <button class="logo5">
+         <i data-lucide="book"></i>
+     </button>
+    <h2 class="subject">Tafseer تفسیر</h2>
+    <p class="sentence">Understanding the quran with Interpretation</p>
+    <div class="explore">Explore➔</div>
+ </a>
+ </div>
+ 
+ 
+ 
+ 
+ 
+ <div class="Dashboard">
+     <h1 class="text-h1">Connect live with your teachers </h1>
+     <p class="p1"> Secure in-browser voice and video calls-no phone numbers needed.</p><button class="dasha-bord">Go to Dashboard </button>
+ </div>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <footer class="footer">
 
+<div class="footer-logo">
+    <button class="logo">AF</button>
 
-    
-    
-    
-    <button class="logo"> AF</button>
-    <h1>AF Taleem Academy</h1>
-<button id="themeToggle" class="theme-btn">
-  <i data-lucide="moon-star"></i>
-</button>
-<a href="login.html">
-    <button class="login">️Login</button></a>
+    <div>
+        <h2>AF Taleem Academy</h2>
+        <p>
+        Modern Islamic Education — Urdu, Arabic,
+        Islamic Studies, Computer Basics and beyond.
+        </p>
     </div>
-    
-    
-    
-    <div class="hero">
-    <img src="masjid.png" class="masjid">
-    <button class="uper">️♨Modern Islamic Learning Platform</button>
-    <div class="line">WELCOME TO <span>AF <br>TALEEM ACADEMY</span>
-    </div>
-    <div class="uper1">
-تعلیم ہی کامیابی کی پہلی سیڑھی ہے۔ <br>آج ہی ہمارے ساتھ اپنے روشن مستقبل کا آغاز کریں ٬٬٬</div>
-<div class="uper2">Learn Urdu, Arabic, Islamic Studies and Computer Basics.
 </div>
-<button class="start-btn">Start Learning   &#8594</button>
-<button class="uper3">Apply for Admissions</button>
+
+<div class="footer-box">
+
+<h3>Quick Links</h3>
+
+<a href="#">Courses</a>
+
+<a href="#">Duas</a>
+
+<a href="#">Admission</a>
+
+<a href="#">Contact</a>
+
 </div>
-<p>OUR COURSES</P>
-<h1 class="uper-1">knowledge that shapes lives </h1>
 
+<div class="footer-box">
 
+<h3>Contact</h3>
 
+<p>📧 info@aftaleem.com</p>
 
-<div class="container">
-  <span class="ball ball1"></span>
-  <span class="ball ball2"></span>
-  <span class="ball ball3"></span>
-  <span class="ball ball4"></span>
-  <div class="book-logo">
-    <i data-lucide="book-open"></i></div>
-  <h1 class="subject">Urdu اردو</h1>
-  <p class="text">Master Urdu Reading, Writing.and grammar.</p>
-  <a href="#" class="explore">Explore →</a>
+<p>📞 Noto available</p>
+
+<p>📍  west champaran Bihar,India</p>
+
 </div>
-<br>
-<div class="container">
-  <span class="bg-box"></span>
-  <div class="book-logo1">
-    <i data-lucide="languages"></i></div>
-  <h1 class="subject">Arabic قرآن مجید</h1>
-  <p class="text">Learn Arabic the language of quran.</p>
-  <a href="#" class="explore">Explore →</a>
-  </div>
-  <br>
-  <div class="container">
-    <span class="bg-box"></span>
-    <div class="book-logo2">
-      <i data-lucide="moon-star"></i></div>
-    <h1 class="subject">Islamiyat اسلامیات</h1>
-    <p class="text">Foundation of faith, history,and ethics.</p>
-    <a  href="#" class="explore">Explore →</a>
-  </div> <br>
-<div class="container">
-  <div class="book-logo3"><i data-lucide="laptop"></i></div>
-  <h1 class="subject">Computer</h1>
- <p class="text">Computer basics for the digital generation.</p>
-  <a href="#" class="explore">Explore →</a>
+
+<div class="footer-box">
+
+<h3>Follow</h3>
+
+<div class="social">
+
+<button><i class="fab fa-whatsapp"></i></button>
+
+<button><i class="fab fa-instagram"></i></button>
+
+<button><i class="fab fa-youtube"></i></button>
+
 </div>
-<br>
-<div class="container">
-  <div class="book-logo">☪</div>
-  <h1 class="subject">Hadith حدیث</h1>
-  <p class="text">Saying of prophet Mohammad ﷺ</p>
-  <a href="#"class="explore">Explore →</a>
-</div><br>
-<a href="dua.html">
-<div class="container">
-  <span class="bg-box"></span>
-  <div class="book-logo7"><i data-lucide="hand-heart"></i></div>
-  <h1 class="subject">Dua & Kalima دعا,کلمہ</h1>
-  <p class="text">Essential Supplication and the six Kalima</p>
-  <div class="explore">Explore →</div></a>
-</div><br>
-<div class="container">
-  <div class="book-logo4">
-    <i data-lucide="book-open-text"></i></div>
-  <h1 class="subject">Tafseer تفسیر</h1>
-  <p class="text">Understanding the quran with Interpretation.</p>
-  <div class="explore">Explore →</div>
-</div><br>
 
-<div class="container">
-  <span class="bg-box"></span>
-  <div class="book-logo5">
-    <i data-lucide="cpu"></i></div>
-    <h1 class="subject">Artificial Intelligence</h1>
-    <p class="text">Modern Ai-Concept.tools and applications.</p>
-    <div class="explore">Explore →</div>
-  </div>
-  <div class="container">
-    <div class="book-logo6"><i class="font" data-lucide="graduation-cap"></i></div>
-    <h1 class="subject">English</h1>
-    <p class="text">Speak and write Confidently in English</p>
-    <div class="explore">Explore →</div>
-  </div>
-
-<div class="dasha-bord container">
-  <h1 class="line1">Contact live with your teachers</h1>
-  <p class="line2">Secure in-browser voice and video calls — no phone numbers needed.</p>
-  <button class="btn">Go to Dashboard</button>
 </div>
-<nav class="bottom-nav">
-
-  <a href="index.html">
-    <i data-lucide="book-open"></i>
-    <span>Home</span>
-  </a>
-
-  <a href="book.html">
-    <i data-lucide="book-open"></i>
-    <span>Books</span>
-  </a>
-
-  <a href="notes.html">
-    <i data-lucide="notebook-text"></i>
-    <span>Notes</span>
-  </a>
-
-  <a href="contact.html">
-    <i data-lucide="message-circle"></i>
-    <span>Contact</span>
-  </a>
-<a href="profile.html">
-    <i data-lucide="user"></i>
-    <span>Profile</span>
-</a>
-</nav>
-
-
-
-
-
-
-<footer class="footer">
-
-  <h2>AF Taleem Academy</h2>
-  <p>Empowering Islamic & Modern Education</p>
-
-  <div class="footer-social">
-
-    <a href="https://www.instagram.com/reel/DZzn-EHvjmA/?igsh=MWpmMWg2eHY1ZmZwbg==" target="_blank">
-      <i class="fab fa-instagram"></i>
-    </a>
-
-    <a href="https://www.facebook.com/share/r/1BVbnJ1XZt/" target="_blank">
-      <i class="fab fa-facebook"></i>
-    </a>
-
-    <a href="https://youtu.be/vrA87h1bdTw?si=V1UQ-_d39p3C4S-Q" target="_blank">
-      <i class="fab fa-youtube"></i>
-    </a>
-
-    <a href="https://wa.me/918539985063" target="_blank">
-      <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <a href="mailto:aftaleemacademy@gmail.com">
-      <i class="fas fa-envelope"></i>
-    </a>
-
-    <a href="https://aftaleemacademy.com">
-      <i class="fas fa-globe"></i>
-    </a>
-
-  </div>
-
-  <div class="footer-contact">
-    <p>📞 91+ No not Available.
-    <p>📧  aftaleemacademy@gmail.com</p>
-    <p>🌐 www.aftaleemacademy.com</p>
-  </div>
-
-  <p class="copyright">
-    © 2026 AF Taleem Academy | All Rights Reserved
-  </p>
 
 </footer>
+ 
+ <nav class="bottom-nav">
 
+<a href="index.html" class="active">
+<i data-lucide="house"></i>
+<span>Home</span>
+</a>
+
+<a href="books.html">
+<i data-lucide="book-open"></i>
+<span>Books</span>
+</a>
+
+<a href="notes.html">
+<i data-lucide="file-text"></i>
+<span>Notes</span>
+</a>
+
+<a href="contact.html">
+<i data-lucide="message-circle"></i>
+<span>Contact</span>
+</a>
+
+<a href="login.html">
+<i data-lucide="log-in"></i>
+<span>Login</span>
+</a>
+
+</nav>
+
+ 
+ 
+ 
+  <script src="https://unpkg.com/lucide@latest"></script>
 
 <script>
-  lucide.createIcons();
-  
-  
-  const btn = document.getElementById("themeToggle");
-
-btn.onclick = function(){
-
-    document.body.classList.toggle("dark");
-
-    if(document.body.classList.contains("dark")){
-        localStorage.setItem("theme","dark");
-    }else{
-        localStorage.setItem("theme","light");
-    }
-
+function openMenu() {
+    document.getElementById("sidebar").style.left = "0";
+    document.getElementById("overlay").style.display = "block";
 }
 
-if(localStorage.getItem("theme")=="dark"){
-    document.body.classList.add("dark");
+function closeMenu() {
+    document.getElementById("sidebar").style.left = "-320px";
+    document.getElementById("overlay").style.display = "none";
 }
 
-function openMenu(){
-document.getElementById("sidebar").style.left="0";
-}
-
-function closeMenu(){
-document.getElementById("sidebar").style.left="-280px";
-}
+lucide.createIcons();
 </script>
-</body>
-</html>
+        
+        <script src="script.js"></script>
+        
+    </body>
+</html> 
+ 
