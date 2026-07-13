@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+            <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <script src="https://unpkg.com/lucide@latest"></script>
+  <title>Urdu</title>
+  <style>
+      
+      .back-btn{
+          margin-top:100px;
+      }
+      .urdu-line{
+          margin-top:100px;
+          margin-left:20px;
+          border:none;
+          border-radius:25px;
+          width:90%;
+          padding:20px 0px;
+          background:#15803d;
+          color:white;
+      }
+      .subject-u{
+          margin-left:20px;
+          color:white;
+      }
+      .sentence-u{
+          color:white;
+          
+      }
+      .urdu-box{
+          margin-top:20px;
+          margin-left:20px;
+          width:90%;
+          padding:20px 0px;
+          border:1px solid black;
+          border-radius:16px;
+          transition:0.3s;
+      }
+      .urdu-logo{
+          margin-left:25px;
+          color:#0a6b5d;
+      }
+      .urdu-box:hover{
+          box-shadow:0px 0px 20px black;
+      }
+      .open{
+          width:30%;
+          margin-left:20px;
+          padding:10px 20px;
+          border-radius:20px;
+          border:none;
+          background:rgba(255,255,255 45)
+          color:white;
+          transition:0.3s;
+      }
+      .open:hover{
+          background:#15803d;
+          transform:scale(1.05);
+          background:;
+          box-shadow:0px 0px 20px green;
+          color:white;
+      }
+      
+      
+      /* ===========================
+      KALMA PAGE CSS
+=========================== */
+
+.back-btn{
+    display:inline-block;
+    margin:90px 0 15px 20px;
+    color:#15803d;
+    text-decoration:none;
+    font-weight:700;
+}
+
+.kalma-h1{
+    text-align:center;
+    font-size:42px;
+    font-weight:800;
+    color:#111;
+    margin-top:15px;
+}
+
+.kalma-h2{
+    text-align:center;
+    color:#666;
+    font-size:24px;
+    margin:10px 0 30px;
+}
+
+.search-box{
+    width:90%;
+    margin:auto;
+}
+
+.search-input{
+    width:90%;
+    padding:18px;
+    border:none;
+    outline:none;
+    border-radius:18px;
+    background:#fff;
+    font-size:17px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.35s;
+}
+
+.search-input:focus{
+    border:2px solid #15803d;
+    box-shadow:0 0 18px rgba(21,128,61,.30);
+}
+
+.kalma-count{
+    width:90%;
+    margin:22px auto;
+    color:#666;
+    font-size:18px;
+}
+
+.kalma-card{
+    width:90%;
+    margin:20px auto;
+    background:#fff;
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.35s;
+}
+
+.kalma-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 18px 35px rgba(0,0,0,.15);
+}
+
+.kalma-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:22px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.kalma-header:hover{
+    background:#f8f8f8;
+}
+
+.kalma-header h3{
+    margin:0;
+    font-size:24px;
+    color:#111;
+}
+
+.kalma-header i{
+    color:#15803d;
+    font-size:22px;
+    transition:.4s;
+}
+
+.kalma-content{
+    display:none;
+    padding:25px;
+    border-top:1px solid #eee;
+    animation:fade .45s ease;
+}
+
+.kalma-content.active{
+    display:block;
+}
+
+@keyframes fade{
+
+from{
+opacity:0;
+transform:translateY(-15px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+.arabic{
+    direction:rtl;
+    text-align:right;
+    color:#15803d;
+    font-size:38px;
+    line-height:2;
+    margin-bottom:25px;
+    font-family:'Amiri','Scheherazade New',serif;
+}
+
+.urdu{
+    direction:rtl;
+    text-align:right;
+    color:#333;
+    font-size:22px;
+    line-height:2;
+}
+
+.english{
+    margin-top:20px;
+    color:#555;
+    font-size:17px;
+    line-height:1.8;
+}
+
+@media(max-width:768px){
+
+.kalma-h1{
+font-size:30px;
+}
+
+.kalma-h2{
+font-size:20px;
+padding:0 15px;
+}
+
+.arabic{
+font-size:28px;
+}
+
+.urdu{
+font-size:19px;
+}
+
+.kalma-header h3{
+font-size:20px;
+}
+
+.search-input{
+font-size:16px;
+padding:16px;
+}
+
+}
+  </style>
+</head>
+
+<body>
+  <div id="overlay" class="overlay" onclick="closeMenu()"></div>
+
+<div id="sidebar" class="sidebar">
+
+    <span class="close" onclick="closeMenu()">✕</span>
+
+    <a href="index.html" class="active">
+        <i data-lucide="house"></i> Home
+    </a>
+
+    <a href="courses.html">
+        <i data-lucide="book-open"></i> Courses
+    </a>
+
+    <a href="dua.html">
+        <i data-lucide="book-open"></i> Dua
+    </a>
+
+    <a href="books.html">
+        <i data-lucide="book-open"></i> Books
+    </a>
+
+    <a href="notes.html">
+        <i data-lucide="file-text"></i> Notes
+    </a>
+
+    <a href="contact.html">
+        <i data-lucide="message-circle"></i> Contact
+    </a>
+
+</div>
+        
+        <div class="navbar">
+            <div class="left">
+            <div class="menu" onclick="openMenu()">≡</div>
+           <button class="logo">AF</button>
+            <h1 class="text1">AF Taleem Academy</h1>
+            </div>
+            <div class="right">
+            <div class="dark-btn">
+                <i data-lucide="moon"></i>
+            </div>
+            <button class="login">➔Login</button>
+            </div>
+        </div>
+        
+  <a href="index.html" class="back-btn">
+            ➔ Back to aal courses</a>
+        
+        
+        <body>
+
+<
+
+<h1 class="kalma-h1">
+8 Kalmas
+</h1>
+
+<h2 class="kalma-h2">
+کلمہ طیبہ، شہادت، تمجید، توحید، استغفار، ردِ کفر
+</h2>
+
+<div class="search-box">
+
+<input
+type="text"
+id="searchInput"
+class="search-input"
+placeholder="🔍 Search Kalma..."
+>
+
+</div>
+
+<p class="kalma-count">
+8 Kalmas Found
+</p>
+
+<!-- ===========================
+      FIRST KALMA
+=========================== -->
+
+<div class="kalma-card">
+
+<div class="kalma-header" onclick="toggleKalma(this)">
+
+<div>
+
+<h3>
+پہلا کلمہ طیبہ
+</h3>
+
+</div>
+
+<i class="fa-solid fa-chevron-down"></i>
+
+</div>
+
+<div class="kalma-content">
+
+<h2 class="arabic">
+
+لَا إِلٰهَ إِلَّا اللَّهُ مُحَمَّدٌ رَّسُولُ اللَّهِ
+
+</h2>
+
+<p class="urdu">
+
+اللہ کے سوا کوئی معبود نہیں،
+حضرت محمد ﷺ اللہ کے رسول ہیں۔
+
+</p>
+
+<p class="english">
+
+<b>English:</b><br>
+
+There is no god except Allah,
+Muhammad ﷺ is the Messenger of Allah.
+
+</p>
+
+</div>
+
+</div>
+
+<!-- ===========================
+      SECOND KALMA
+=========================== -->
+
+<div class="kalma-card">
+
+<div class="kalma-header" onclick="toggleKalma(this)">
+
+<div>
+
+<h3>
+دوسرا کلمہ شہادت
+</h3>
+
+</div>
+
+<i class="fa-solid fa-chevron-down"></i>
+
+</div>
+
+<div class="kalma-content">
+
+<h2 class="arabic">
+
+أَشْهَدُ أَنْ لَا إِلٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ،
+وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ
+
+</h2>
+
+<p class="urdu">
+
+میں گواہی دیتا ہوں کہ اللہ کے سوا کوئی معبود نہیں،
+وہ اکیلا ہے، اس کا کوئی شریک نہیں،
+اور میں گواہی دیتا ہوں کہ محمد ﷺ
+اس کے بندے اور رسول ہیں۔
+
+</p>
+
+<p class="english">
+
+<b>English:</b><br>
+
+I bear witness that there is no god except Allah,
+He is One and has no partner,
+and I bear witness that Muhammad ﷺ
+is His servant and Messenger.
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- ===========================
+      THIRD KALMA
+=========================== -->
+
+<div class="kalma-card">
+
+<div class="kalma-header" onclick="toggleKalma(this)">
+<div>
+<h3>تیسرا کلمہ تمجید</h3>
+</div>
+
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="kalma-content">
+
+<h2 class="arabic">
+سُبْحَانَ اللَّهِ وَالْحَمْدُ لِلَّهِ وَلَا إِلٰهَ إِلَّا اللَّهُ وَاللَّهُ أَكْبَرُ، وَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ الْعَلِيِّ الْعَظِيمِ
+</h2>
+
+<p class="urdu">
+اللہ پاک ہے، تمام تعریفیں اللہ ہی کے لیے ہیں، اللہ کے سوا کوئی معبود نہیں، اللہ سب سے بڑا ہے، اور گناہوں سے بچنے اور نیکی کرنے کی طاقت صرف اللہ بلند و عظمت والے کی طرف سے ہے۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+Glory be to Allah. All praise is for Allah. There is no god except Allah. Allah is the Greatest. There is no power and no strength except through Allah, the Most High, the Most Great.
+</p>
+
+</div>
+
+</div>
+
+<!-- ===========================
+      FOURTH KALMA
+=========================== -->
+
+<div class="kalma-card">
+
+<div class="kalma-header" onclick="toggleKalma(this)">
+<div>
+<h3>چوتھا کلمہ توحید</h3>
+</div>
+
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="kalma-content">
+
+<h2 class="arabic">
+لَا إِلٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، يُحْيِي وَيُمِيتُ وَهُوَ حَيٌّ لَا يَمُوتُ أَبَدًا، أَبَدًا، ذُو الْجَلَالِ وَالْإِكْرَامِ، بِيَدِهِ الْخَيْرُ، وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ
+</h2>
+
+<p class="urdu">
+اللہ کے سوا کوئی معبود نہیں، وہ اکیلا ہے، اس کا کوئی شریک نہیں، اسی کی بادشاہی ہے، اسی کے لیے تمام تعریف ہے، وہی زندہ کرتا ہے اور وہی موت دیتا ہے، وہ ہمیشہ زندہ ہے، کبھی نہیں مرے گا، وہ عزت اور بزرگی والا ہے، ہر بھلائی اسی کے ہاتھ میں ہے اور وہ ہر چیز پر قادر ہے۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+There is no god except Allah alone. He has no partner. His is the Kingdom and all praise belongs to Him. He gives life and causes death. He is Ever-Living and never dies. In His Hand is all good and He has power over everything.
+</p>
+
+</div>
+
+</div>
+
+<!-- ===========================
+      FIFTH KALMA
+=========================== -->
+
+<div class="kalma-card">
+
+<div class="kalma-header" onclick="toggleKalma(this)">
+<div>
+<h3>پانچواں کلمہ استغفار</h3>
+</div>
+
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="kalma-content">
+
+<h2 class="arabic">
+أَسْتَغْفِرُ اللَّهَ رَبِّي مِنْ كُلِّ ذَنْبٍ أَذْنَبْتُهُ عَمْدًا أَوْ خَطَأً سِرًّا أَوْ عَلَانِيَةً، وَأَتُوبُ إِلَيْهِ مِنَ الذَّنْبِ الَّذِي أَعْلَمُ وَمِنَ الذَّنْبِ الَّذِي لَا أَعْلَمُ، إِنَّكَ أَنْتَ عَلَّامُ الْغُيُوبِ وَسَتَّارُ الْعُيُوبِ وَغَفَّارُ الذُّنُوبِ، وَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ الْعَلِيِّ الْعَظِيمِ
+</h2>
+
+<p class="urdu">
+میں اللہ سے اپنے تمام گناہوں کی معافی مانگتا ہوں، جو جان بوجھ کر یا بھول کر، چھپ کر یا کھلے عام ہوئے ہوں، اور میں اسی کی طرف توبہ کرتا ہوں۔ بے شک تو ہر پوشیدہ چیز کو جاننے والا، عیبوں کو چھپانے والا اور گناہوں کو بخشنے والا ہے۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+I seek forgiveness from Allah, my Lord, for every sin I committed knowingly or unknowingly, secretly or openly, and I repent to Him. Surely You know all hidden things, conceal faults and forgive sins.
+</p>
+
+</div>
+
+</div>
+
+<!-- ===========================
+      SIXTH KALMA
+=========================== -->
+
+<div class="kalma-card">
+
+<div class="kalma-header" onclick="toggleKalma(this)">
+<div>
+<h3>چھٹا کلمہ ردِ کفر</h3>
+</div>
+
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="kalma-content">
+
+<h2 class="arabic">
+اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ أَنْ أُشْرِكَ بِكَ شَيْئًا وَأَنَا أَعْلَمُ بِهِ، وَأَسْتَغْفِرُكَ لِمَا لَا أَعْلَمُ بِهِ، تُبْتُ عَنْهُ، وَتَبَرَّأْتُ مِنَ الْكُفْرِ وَالشِّرْكِ وَالْكَذِبِ وَالْغِيبَةِ وَالْبِدْعَةِ وَالنَّمِيمَةِ وَالْفَوَاحِشِ وَالْبُهْتَانِ وَالْمَعَاصِي كُلِّهَا، وَأَسْلَمْتُ وَأَقُولُ لَا إِلٰهَ إِلَّا اللَّهُ مُحَمَّدٌ رَسُولُ اللَّهِ
+</h2>
+
+<p class="urdu">
+اے اللہ! میں تیری پناہ مانگتا ہوں کہ میں جانتے ہوئے کسی کو تیرا شریک بناؤں، اور جسے میں نہیں جانتا اس پر تجھ سے معافی مانگتا ہوں۔ میں کفر، شرک، جھوٹ، غیبت، بدعت، چغلی، بے حیائی، بہتان اور تمام گناہوں سے توبہ کرتا ہوں۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+O Allah, I seek refuge in You from knowingly associating partners with You, and I seek Your forgiveness for what I do unknowingly. I repent from disbelief, shirk, lying, backbiting, innovation, slander and all sins.
+</p>
+
+</div>
+
+</div>
+<!-- ===========================
+      IMAN-E-MUJMAL
+=========================== -->
+
+<div class="kalma-card">
+
+<div class="kalma-header" onclick="toggleKalma(this)">
+<div>
+<h3>ایمانِ مجمل</h3>
+</div>
+
+<i class="fa-solid fa-chevron-down"></i>
+
+</div>
+
+<div class="kalma-content">
+
+<h2 class="arabic">
+آمَنْتُ بِاللّٰهِ كَمَا هُوَ بِأَسْمَائِهِ وَصِفَاتِهِ وَقَبِلْتُ جَمِيعَ أَحْكَامِهِ
+</h2>
+
+<p class="urdu">
+میں اللہ تعالیٰ پر ایمان لایا، جیسا کہ وہ اپنی ذات، اپنے ناموں اور صفات کے ساتھ ہے، اور میں اس کے تمام احکام کو قبول کرتا ہوں۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+I believe in Allah as He is with His Names and Attributes, and I accept all of His commands.
+</p>
+
+</div>
+
+</div>
+
+<!-- ===========================
+      IMAN-E-MUFASSAL
+=========================== -->
+
+<div class="kalma-card">
+
+<div class="kalma-header" onclick="toggleKalma(this)">
+<div>
+<h3>ایمانِ مفصل</h3>
+</div>
+
+<i class="fa-solid fa-chevron-down"></i>
+
+</div>
+
+<div class="kalma-content">
+
+<h2 class="arabic">
+آمَنْتُ بِاللّٰهِ وَمَلَائِكَتِهِ وَكُتُبِهِ وَرُسُلِهِ وَالْيَوْمِ الْآخِرِ وَالْقَدْرِ خَيْرِهِ وَشَرِّهِ مِنَ اللَّهِ تَعَالَى وَالْبَعْثِ بَعْدَ الْمَوْتِ
+</h2>
+
+<p class="urdu">
+میں اللہ، اس کے فرشتوں، اس کی کتابوں، اس کے رسولوں، آخرت کے دن، اچھی اور بری تقدیر کے اللہ کی طرف سے ہونے، اور موت کے بعد دوبارہ زندہ کیے جانے پر ایمان رکھتا ہوں۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+I believe in Allah, His angels, His books, His messengers, the Last Day, destiny (good and bad) from Allah, and resurrection after death.
+</p>
+
+</div>
+
+</div>
+
+<script>
+// Accordion
+function toggleKalma(header){
+
+const content = header.nextElementSibling;
+const icon = header.querySelector("i");
+
+document.querySelectorAll(".kalma-content").forEach(item=>{
+if(item!==content){
+item.classList.remove("active");
+}
+});
+
+document.querySelectorAll(".kalma-header i").forEach(i=>{
+if(i!==icon){
+i.style.transform="rotate(0deg)";
+}
+});
+
+content.classList.toggle("active");
+
+icon.style.transform =
+content.classList.contains("active")
+? "rotate(180deg)"
+: "rotate(0deg)";
+}
+
+// Search
+const searchInput=document.getElementById("searchInput");
+
+if(searchInput){
+
+searchInput.addEventListener("keyup",function(){
+
+const value=this.value.toLowerCase();
+
+const cards=document.querySelectorAll(".kalma-card");
+
+let total=0;
+
+cards.forEach(card=>{
+
+const text=card.innerText.toLowerCase();
+
+if(text.includes(value)){
+card.style.display="block";
+total++;
+}else{
+card.style.display="none";
+}
+
+});
+
+document.querySelector(".kalma-count").innerHTML=
+total+" Kalmas Found";
+
+});
+
+}
+
+// Lucide Icons
+lucide.createIcons();
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Part 1 Ends Here -->
+     
+      <footer class="footer">
+
+<div class="footer-logo">
+    <button class="logo">AF</button>
+
+    <div>
+        <h2>AF Taleem Academy</h2>
+        <p>
+        Modern Islamic Education — Urdu, Arabic,
+        Islamic Studies, Computer Basics and beyond.
+        </p>
+    </div>
+</div>
+
+<div class="footer-box">
+
+<h3>Quick Links</h3>
+
+<a href="#">Courses</a>
+
+<a href="#">Duas</a>
+
+<a href="#">Admission</a>
+
+<a href="#">Contact</a>
+
+</div>
+
+<div class="footer-box">
+
+<h3>Contact</h3>
+
+<p>📧 info@aftaleem.com</p>
+
+<p>📞 Noto available</p>
+
+<p>📍  west champaran Bihar,India</p>
+
+</div>
+
+<div class="footer-box">
+
+<h3>Follow</h3>
+
+<div class="social">
+
+<button><i class="fab fa-whatsapp"></i></button>
+
+<button><i class="fab fa-instagram"></i></button>
+
+<button><i class="fab fa-youtube"></i></button>
+</div>
+<h1>علم نور ہے</h1>
+</div>
+
+</footer>
+     
+        
+         <nav class="bottom-nav">
+
+<a href="index.html" class="active">
+<i data-lucide="house"></i>
+<span>Home</span>
+</a>
+
+<a href="books.html">
+<i data-lucide="book-open"></i>
+<span>Books</span>
+</a>
+
+<a href="notes.html">
+<i data-lucide="file-text"></i>
+<span>Notes</span>
+</a>
+
+<a href="contact.html">
+<i data-lucide="message-circle"></i>
+<span>Contact</span>
+</a>
+
+<a href="login.html">
+<i data-lucide="log-in"></i>
+<span>Login</span>
+</a>
+
+</nav>
+
+<script src="script.js"></script>
+                
+</body>
+
+</html>

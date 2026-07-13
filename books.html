@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+            <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <script src="https://unpkg.com/lucide@latest"></script>
+  <title>Urdu</title>
+  <style>
+      
+      .back-btn{
+          margin-top:100px;
+      }
+      .urdu-line{
+          margin-top:100px;
+          margin-left:20px;
+          border:none;
+          border-radius:25px;
+          width:90%;
+          padding:20px 0px;
+          background:#15803d;
+          color:white;
+          align-items:center;
+      }
+      .subject-u{
+          margin-left:20px;
+          color:black;
+      }
+      .sentence-u{
+          color:black;
+      }
+      .urdu-box{
+          margin-top:20px;
+          margin-left:20px;
+          width:90%;
+          padding:20px 0px;
+          border:1px solid black;
+          border-radius:16px;
+          transition:0.3s;
+      }
+      .urdu-logo{
+          margin-left:25px;
+          color:#0a6b5d;
+      }
+      .urdu-box:hover{
+          box-shadow:0px 0px 20px black;
+      }
+      .open{
+          width:30%;
+          margin-left:20px;
+          padding:10px 20px;
+          border-radius:20px;
+          border:none;
+          background:rgba(255,255,255 45)
+          color:white;
+          transition:0.3s;
+      }
+      .open:hover{
+          background:#15803d;
+          transform:scale(1.05);
+          background:;
+          box-shadow:0px 0px 20px green;
+          color:white;
+      }
+      
+      
+      
+      .search-box{
+    width:90%;
+    margin:20px auto;
+}
+
+.search-input{
+    width:100%;
+    padding:16px 20px;
+    border:none;
+    border-radius:15px;
+    outline:none;
+    font-size:18px;
+    box-sizing:border-box;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.search-input:focus{
+    border:2px solid #15803d;
+}
+  </style>
+</head>
+
+<body>
+  <div id="overlay" class="overlay" onclick="closeMenu()"></div>
+
+<div id="sidebar" class="sidebar">
+
+    <span class="close" onclick="closeMenu()">✕</span>
+
+    <a href="index.html" class="active">
+        <i data-lucide="house"></i> Home
+    </a>
+
+    <a href="courses.html">
+        <i data-lucide="book-open"></i> Courses
+    </a>
+
+    <a href="dua.html">
+        <i data-lucide="book-open"></i> Dua
+    </a>
+
+    <a href="books.html">
+        <i data-lucide="book-open"></i> Books
+    </a>
+
+    <a href="notes.html">
+        <i data-lucide="file-text"></i> Notes
+    </a>
+
+    <a href="contact.html">
+        <i data-lucide="message-circle"></i> Contact
+    </a>
+
+</div>
+        
+        <div class="navbar">
+            <div class="left">
+            <div class="menu" onclick="openMenu()">≡</div>
+           <button class="logo">AF</button>
+            <h1 class="text1">AF Taleem Academy</h1>
+            </div>
+            <div class="right">
+            <div class="dark-btn">
+                <i data-lucide="moon"></i>
+            </div>
+            <button class="login">➔Login</button>
+            </div>
+        </div>
+        
+  <a href="index.html" class="back-btn">
+            ➔ Back to aal courses</a>
+        
+        <h1 class="urdu-line">📚  Shehzada  Library</h1>
+        
+        
+        
+        <div class="search-box">
+    <input type="text" id="searchBook"
+    class="search-input"
+    placeholder="🔍 Search Books...">
+</div>
+        
+        
+
+<div class="urdu-box">
+    <i class="fas fa-book-open urdu-logo"></i>
+    <h2 class="subject-u">اردو کتاب - حصہ اول</h2>
+    <p class="sentence-u">
+        ابتدائی اردو سیکھنے کے لیے مکمل کتاب۔
+    </p>
+    <a href="books/urdu-part1.pdf" target="_blank">
+        <button class="open">Open PDF</button>
+    </a>
+</div>
+
+<div class="urdu-box">
+    <i class="fas fa-book-open urdu-logo"></i>
+    <h2 class="subject-u">اردو کتاب - حصہ دوم</h2>
+    <p class="sentence-u">
+        درمیانی درجے کے طلبہ کے لیے۔
+    </p>
+    <a href="books/urdu-part2.pdf" target="_blank">
+        <button class="open">Open PDF</button>
+    </a>
+</div>
+
+<div class="urdu-box">
+    <i class="fas fa-book-open urdu-logo"></i>
+    <h2 class="subject-u">اردو گرامر</h2>
+    <p class="sentence-u">
+        قواعد، املا اور مشقیں۔
+    </p>
+    <a href="books/urdu-grammar.pdf" target="_blank">
+        <button class="open">Open PDF</button>
+    </a>
+</div>
+
+<div class="urdu-box">
+    <i class="fas fa-book-open urdu-logo"></i>
+    <h2 class="subject-u">اردو کہانیاں</h2>
+    <p class="sentence-u">
+        بچوں اور طلبہ کے لیے آسان کہانیاں۔
+    </p>
+    <a href="books/urdu-stories.pdf" target="_blank">
+        <button class="open">Open PDF</button>
+    </a>
+</div>
+<div class="urdu-box">
+    <i class="fas fa-book-open urdu-logo"></i>
+    <h2 class="subject-u">نورانی قاعدہ</h2>
+    <p class="sentence-u">
+        قرآن کریم صحیح پڑھنے کے لیے بنیادی قاعدہ۔
+    </p>
+    <a href="books/noorani-qaida.pdf" target="_blank">
+        <button class="open">Open PDF</button>
+    </a>
+</div>
+
+<div class="urdu-box">
+    <i class="fas fa-book-open urdu-logo"></i>
+    <h2 class="subject-u">اردو قواعد</h2>
+    <p class="sentence-u">
+        اسم، فعل، حرف اور مکمل اردو گرامر۔
+    </p>
+    <a href="books/urdu-qawaid.pdf" target="_blank">
+        <button class="open">Open PDF</button>
+    </a>
+</div>
+
+<div class="urdu-box">
+    <i class="fas fa-book-open urdu-logo"></i>
+    <h2 class="subject-u">اسلامی کہانیاں</h2>
+    <p class="sentence-u">
+        بچوں اور بڑوں کے لیے سبق آموز اسلامی کہانیاں۔
+    </p>
+    <a href="books/islamic-stories.pdf" target="_blank">
+        <button class="open">Open PDF</button>
+    </a>
+</div>
+
+<div class="urdu-box">
+    <i class="fas fa-book-open urdu-logo"></i>
+    <h2 class="subject-u">دعاؤں کی کتاب</h2>
+    <p class="sentence-u">
+        روزانہ پڑھی جانے والی مسنون دعائیں۔
+    </p>
+    <a href="books/dua-book.pdf" target="_blank">
+        <button class="open">Open PDF</button>
+    </a>
+</div>
+
+<div class="urdu-box">
+    <i class="fas fa-book-open urdu-logo"></i>
+    <h2 class="subject-u">چالیس حدیث</h2>
+    <p class="sentence-u">
+        منتخب چالیس احادیث آسان ترجمہ کے ساتھ۔
+    </p>
+    <a href="books/40-hadith.pdf" target="_blank">
+        <button class="open">Open PDF</button>
+    </a>
+</div>
+
+<div class="urdu-box">
+    <i class="fas fa-book-open urdu-logo"></i>
+    <h2 class="subject-u">سیرت النبی ﷺ</h2>
+    <p class="sentence-u">
+        حضور اکرم ﷺ کی مبارک زندگی۔
+    </p>
+    <a href="books/seerat.pdf" target="_blank">
+        <button class="open">Open PDF</button>
+    </a>
+</div>
+
+<div class="urdu-box">
+    <i class="fas fa-book-open urdu-logo"></i>
+    <h2 class="subject-u">منتخب نظمیں</h2>
+    <p class="sentence-u">
+        آسان اور مشہور اردو نظمیں۔
+    </p>
+    <a href="books/nazmein.pdf" target="_blank">
+        <button class="open">Open PDF</button>
+    </a>
+</div>
+
+<div class="urdu-box">
+    <i class="fas fa-book-open urdu-logo"></i>
+    <h2 class="subject-u">اردو مضمون</h2>
+    <p class="sentence-u">
+        امتحانات کے لیے اہم مضامین کا مجموعہ۔
+    </p>
+    <a href="books/mazmoon.pdf" target="_blank">
+        <button class="open">Open PDF</button>
+    </a>
+</div>
+<div class="urdu-box">
+    <i class="fas fa-book-open urdu-logo"></i>
+    <h2 class="subject-u">بہارِ شریعت</h2>
+    <p class="sentence-u">اسلامی مسائل و احکام کی مشہور کتاب۔</p>
+    <a href="books/bahar-e-shariat.pdf" target="_blank">
+        <button class="open">Open PDF</button>
+    </a>
+</div>
+
+<div class="urdu-box">
+    <i class="fas fa-book-open urdu-logo"></i>
+    <h2 class="subject-u">فضائلِ اعمال</h2>
+    <p class="sentence-u">اعمال کی فضیلت پر مشہور اسلامی کتاب۔</p>
+    <a href="books/fazail-e-amal.pdf" target="_blank">
+        <button class="open">Open PDF</button>
+    </a>
+</div>
+
+<div class="urdu-box">
+    <i class="fas fa-book-open urdu-logo"></i>
+    <h2 class="subject-u">ریاض الصالحین</h2>
+    <p class="sentence-u">اخلاق اور عبادات سے متعلق احادیث کا مجموعہ۔</p>
+    <a href="books/riyadus-saliheen.pdf" target="_blank">
+        <button class="open">Open PDF</button>
+    </a>
+</div>
+
+<div class="urdu-box">
+    <i class="fas fa-book-open urdu-logo"></i>
+    <h2 class="subject-u">حصن المسلم</h2>
+    <p class="sentence-u">روزانہ کی مسنون دعاؤں کا مجموعہ۔</p>
+    <a href="books/hisnul-muslim.pdf" target="_blank">
+        <button class="open">Open PDF</button>
+    </a>
+</div>
+
+<div class="urdu-box">
+    <i class="fas fa-book-open urdu-logo"></i>
+    <h2 class="subject-u">تعلیم الاسلام</h2>
+    <p class="sentence-u">ابتدائی اسلامی تعلیمات کی آسان کتاب۔</p>
+    <a href="books/taleem-ul-islam.pdf" target="_blank">
+        <button class="open">Open PDF</button>
+    </a>
+</div>
+
+<div class="urdu-box">
+    <i class="fas fa-book-open urdu-logo"></i>
+    <h2 class="subject-u">قصص الانبیاء</h2>
+    <p class="sentence-u">انبیائے کرام علیہم السلام کے واقعات۔</p>
+    <a href="books/qasas-ul-anbiya.pdf" target="_blank">
+        <button class="open">Open PDF</button>
+    </a>
+</div>
+
+<div class="urdu-box">
+    <i class="fas fa-book-open urdu-logo"></i>
+    <h2 class="subject-u">منتخب نعتیں</h2>
+    <p class="sentence-u">رسول اللہ ﷺ کی شان میں خوبصورت نعتیں۔</p>
+    <a href="books/naat.pdf" target="_blank">
+        <button class="open">Open PDF</button>
+    </a>
+</div>
+
+<div class="urdu-box">
+    <i class="fas fa-book-open urdu-logo"></i>
+    <h2 class="subject-u">اردو غزلیں</h2>
+    <p class="sentence-u">مشہور شعراء کی منتخب غزلیں۔</p>
+    <a href="books/ghazal.pdf" target="_blank">
+        <button class="open">Open PDF</button>
+    </a>
+</div>
+
+<div class="urdu-box">
+    <i class="fas fa-book-open urdu-logo"></i>
+    <h2 class="subject-u">اردو افسانے</h2>
+    <p class="sentence-u">بہترین اردو افسانوں کا مجموعہ۔</p>
+    <a href="books/afsane.pdf" target="_blank">
+        <button class="open">Open PDF</button>
+    </a>
+</div>
+
+<div class="urdu-box">
+    <i class="fas fa-book-open urdu-logo"></i>
+    <h2 class="subject-u">علامہ اقبال کی شاعری</h2>
+    <p class="sentence-u">علامہ اقبال کی منتخب نظمیں اور اشعار۔</p>
+    <a href="books/iqbal.pdf" target="_blank">
+        <button class="open">Open PDF</button>
+    </a>
+</div>
+        
+        
+        
+        
+        
+        
+        
+        
+     
+     
+      <footer class="footer">
+
+<div class="footer-logo">
+    <button class="logo">AF</button>
+
+    <div>
+        <h2>AF Taleem Academy</h2>
+        <p>
+        Modern Islamic Education — Urdu, Arabic,
+        Islamic Studies, Computer Basics and beyond.
+        </p>
+    </div>
+</div>
+
+<div class="footer-box">
+
+<h3>Quick Links</h3>
+
+<a href="#">Courses</a>
+
+<a href="#">Duas</a>
+
+<a href="#">Admission</a>
+
+<a href="#">Contact</a>
+
+</div>
+
+<div class="footer-box">
+
+<h3>Contact</h3>
+
+<p>📧 info@aftaleem.com</p>
+
+<p>📞 Noto available</p>
+
+<p>📍  west champaran Bihar,India</p>
+
+</div>
+
+<div class="footer-box">
+
+<h3>Follow</h3>
+
+<div class="social">
+
+<button><i class="fab fa-whatsapp"></i></button>
+
+<button><i class="fab fa-instagram"></i></button>
+
+<button><i class="fab fa-youtube"></i></button>
+</div>
+<h1>علم نور ہے</h1>
+</div>
+
+</footer>
+     
+        
+         <nav class="bottom-nav">
+
+<a href="index.html" class="active">
+<i data-lucide="house"></i>
+<span>Home</span>
+</a>
+
+<a href="books.html">
+<i data-lucide="book-open"></i>
+<span>Books</span>
+</a>
+
+<a href="notes.html">
+<i data-lucide="file-text"></i>
+<span>Notes</span>
+</a>
+
+<a href="contact.html">
+<i data-lucide="message-circle"></i>
+<span>Contact</span>
+</a>
+
+<a href="login.html">
+<i data-lucide="log-in"></i>
+<span>Login</span>
+</a>
+
+</nav>
+
+<script src="script.js"></script>
+                
+</body>
+
+</html>

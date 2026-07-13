@@ -1,0 +1,2431 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+            <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <script src="https://unpkg.com/lucide@latest"></script>
+  <title>Urdu</title>
+  <style>
+      
+      .back-btn{
+          margin-top:100%;
+      }
+      .urdu-line{
+          margin-top:100px;
+          margin-left:20px;
+          border:none;
+          border-radius:25px;
+          width:90%;
+          padding:20px 0px;
+          background:#15803d;
+          color:white;
+      }
+      .subject-u{
+          margin-left:20px;
+          color:white;
+      }
+      .sentence-u{
+          color:white;
+          
+      }
+      .urdu-box{
+          margin-top:20px;
+          margin-left:20px;
+          width:90%;
+          padding:20px 0px;
+          border:1px solid black;
+          border-radius:16px;
+          transition:0.3s;
+      }
+      .urdu-logo{
+          margin-left:25px;
+          color:#0a6b5d;
+      }
+      .urdu-box:hover{
+          box-shadow:0px 0px 20px black;
+      }
+      .open{
+          width:30%;
+          margin-left:20px;
+          padding:10px 20px;
+          border-radius:20px;
+          border:none;
+         background:rgba(255,255,255,0.45)
+          color:white;
+          transition:0.3s;
+      }
+      .open:hover{
+          background:#15803d;
+          transform:scale(1.05);
+          background:;
+          box-shadow:0px 0px 20px green;
+          color:white;
+      }
+     
+      
+     /* =========================
+      DUA PAGE CSS
+========================= */
+
+.dua-h1{
+    margin-top:90px;
+    text-align:center;
+    font-size:42px;
+    font-weight:800;
+    color:#111;
+}
+
+.dua-h2{
+    text-align:center;
+    margin:10px 0 35px;
+    font-size:30px;
+    color:#666;
+}
+
+.search-box{
+    width:90%;
+    margin:0 auto;
+}
+
+.search-input{
+    width:90%;
+    padding:18px 22px;
+    border:none;
+    outline:none;
+    border-radius:18px;
+    font-size:17px;
+    background:#fff;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    transition:.35s;
+}
+
+.search-input:focus{
+    border:2px solid #15803d;
+    box-shadow:0 0 20px rgba(21,128,61,.25);
+}
+
+.dua-count{
+    width:90%;
+    margin:25px auto;
+    font-size:18px;
+    color:#555;
+}
+
+.dua-card{
+    width:90%;
+    margin:20px auto;
+    background:#fff;
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.95s;
+}
+
+.dua-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 20px 40px rgba(0,0,0,.12);
+}
+
+.dua-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:22px;
+    cursor:pointer;
+}
+
+.dua-header h3{
+    margin:0;
+    font-size:23px;
+    color:#111;
+}
+
+.dua-header p{
+    margin-top:8px;
+    color:#666;
+    font-size:18px;
+}
+
+.dua-header i{
+    font-size:20px;
+    color:#15803d;
+    transition:.80s;
+}
+
+.dua-content{
+    display:none;
+    padding:0 22px 22px;
+    border-top:1px solid #eee;
+}
+
+.dua-content.active{
+    display:block;
+    animation:fade .900s ease;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(-30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.arabic{
+    direction:rtl;
+    text-align:right;
+    font-size:38px;
+    line-height:2;
+    color:#15803d;
+    margin:25px 0;
+    font-family:'Amiri','Scheherazade New',serif;
+}
+
+.urdu{
+    font-size:22px;
+    line-height:2;
+    direction:rtl;
+    text-align:right;
+    color:#333;
+}
+
+.english{
+    margin-top:18px;
+    font-size:17px;
+    line-height:1.8;
+    color:#555;
+}
+
+@media(max-width:768px){
+
+.dua-h1{
+    font-size:28px;
+}
+
+.dua-h2{
+    font-size:22px;
+}
+
+.arabic{
+    font-size:28px;
+}
+
+.urdu{
+    font-size:19px;
+}
+
+.dua-header h3{
+    font-size:20px;
+}
+
+.search-input{
+    font-size:16px;
+}
+
+}
+  </style>
+</head>
+
+<body>
+  <div id="overlay" class="overlay" onclick="closeMenu()"></div>
+
+<div id="sidebar" class="sidebar">
+
+    <span class="close" onclick="closeMenu()">✕</span>
+
+    <a href="index.html" class="active">
+        <i data-lucide="house"></i> Home
+    </a>
+
+    <a href="courses.html">
+        <i data-lucide="book-open"></i> Courses
+    </a>
+
+    <a href="dua.html">
+        <i data-lucide="book-open"></i> Dua
+    </a>
+
+    <a href="books.html">
+        <i data-lucide="book-open"></i> Books
+    </a>
+
+    <a href="notes.html">
+        <i data-lucide="file-text"></i> Notes
+    </a>
+
+    <a href="contact.html">
+        <i data-lucide="message-circle"></i> Contact
+    </a>
+
+</div>
+        
+        <div class="navbar">
+            <div class="left">
+            <div class="menu" onclick="openMenu()">≡</div>
+           <button class="logo">AF</button>
+            <h1 class="text1">AF Taleem Academy</h1>
+            </div>
+            <div class="right">
+            <div class="dark-btn">
+                <i data-lucide="moon"></i>
+            </div>
+            <button class="login">➔Login</button>
+            </div>
+        </div>
+        
+  <a href="index.html" class="back-btn">
+            ➔ Back to aal courses</a>
+
+
+
+<h1 class="dua-h1">30+ Islamic Duas</h1>
+<h2 class="dua-h2">روز مرہ کی اہم دعا </h2>
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="🔍 Search: sleep, travel, food, home, mosque..." class="search-input">
+
+</div>
+
+<p class="dua-count">34 Duas Found</p>
+
+<!-- ================= FIRST DUA ================= -->
+
+<div class="dua-card">
+
+    <div class="dua-header" onclick="toggleDua(this)">
+        <div>
+            
+            <h3>سونے سے پہلے کی دعا</h3>
+        </div>
+
+        <i class="fa-solid fa-chevron-down"></i>
+    </div>
+
+    <div class="dua-content">
+
+        <h2 class="arabic">
+  اللَّهُمَّ بِاسْمِكَ ُ أَمُوتُ وَأَحْيَا
+        </h2>
+
+        <p class="urdu">
+اے اللہ! میں تیرے ہی نام سےموت کی نیند سوتا ہوں اور پھر زندہ ہوتا ہوں 
+        </p>
+
+        <p class="english">
+<b>English:</b><br>
+O Allah, in Your Name I die and I live.
+        </p>
+
+    </div>
+
+</div>
+
+<!-- ================= SECOND DUA ================= -->
+
+<div class="dua-card">
+
+    <div class="dua-header" onclick="toggleDua(this)">
+        <div>
+            
+            <h3>جاگنے کی دعا</h3>
+        </div>
+
+        <i class="fa-solid fa-chevron-down"></i>
+    </div>
+
+    <div class="dua-content">
+
+<h2 class="arabic">
+الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ
+</h2>
+
+<p class="urdu">
+تمام تعریفیں اللہ کے لیے ہیں جس نے ہمیں مرنے کے بعد پھر زندہ کیا آور اسی کے طرف پلٹ کر جانا ہے۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+All praise is for Allah who gave us life after causing us to die, and to Him is the resurrection.
+</p>
+
+    </div>
+
+</div>
+
+<!-- ================= THIRD DUA ================= -->
+
+<div class="dua-card">
+
+<div class="dua-header" onclick="toggleDua(this)">
+
+<div>
+
+<h3>کھانا کھانے سے پہلے کی دعا</h3>
+
+</div>
+
+<i class="fa-solid fa-chevron-down"></i>
+
+</div>
+
+<div class="dua-content">
+
+<h2 class="arabic">
+بِسْمِ اللّٰهِ وَعَلٰى بَرَكَةِ اللّٰهِ
+</h2>
+
+<p class="urdu">
+اللہ کے نام سے اور اللہ  کے  برکت کے ساتھ ۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+In the name of Allah and with the blessings of Allah.
+</p>
+
+</div>
+
+</div>
+
+<!-- ================= FOURTH DUA ================= -->
+
+<div class="dua-card">
+
+<div class="dua-header" onclick="toggleDua(this)">
+
+<div>
+
+<h3> کھانا کھانے کے بعد کی دعا</h3>
+
+</div>
+
+<i class="fa-solid fa-chevron-down"></i>
+
+</div>
+
+<div class="dua-content">
+
+<h2 class="arabic">
+الْحَمْدُ لِلَّهِ الَّذِي أَطْعَمَنَا وَسَقَانَا وَجَعَلَنَامن المُسْلِمِينَ
+</h2>
+
+<p class="urdu">
+تمام تعریف اللہ کے لیے ہے جس نے ہمیں کھلایا پلایا اور مسلمان بنایا ۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+Praise be to Allah who has fed us and given us drink and made us Muslims.
+</p>
+
+</div>
+
+</div>
+
+<!-- ================= FIFTH DUA ================= -->
+
+<div class="dua-card">
+
+<div class="dua-header" onclick="toggleDua(this)">
+
+<div>
+
+<h3>مسجد میں داخل ہونے کی دعا</h3>
+
+</div>
+
+<i class="fa-solid fa-chevron-down"></i>
+
+</div>
+
+<div class="dua-content">
+
+<h2 class="arabic">
+اللَّهُمَّ افْتَحْ لِي أَبْوَابَ رَحْمَتِكَ
+</h2>
+
+<p class="urdu">
+اے اللہ! میرے لیے اپنی رحمت کے دروازے کھول دے۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+O Allah, open for me the doors of Your mercy.
+</p>
+
+</div>
+
+</div>
+<!-- ================= SIXTH DUA ================= -->
+
+<div class="dua-card">
+
+<div class="dua-header" onclick="toggleDua(this)">
+<div>
+<h3>مسجد سے نکلنے کی دعا</h3>
+</div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+
+<h2 class="arabic">
+اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنْ فَضْلِكَ
+</h2>
+
+<p class="urdu">
+اے اللہ! میں تجھ سے تیرے فضل کا سوال کرتا ہوں۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+O Allah, I ask You for Your bounty.
+</p>
+
+</div>
+
+</div>
+
+<!-- ================= SEVENTH DUA ================= -->
+
+<div class="dua-card">
+
+<div class="dua-header" onclick="toggleDua(this)">
+<div>
+<h3>گھر میں داخل ہونے کی دعا</h3>
+</div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+
+<h2 class="arabic">
+السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّٰهِ وَبَرَكَاتُهُ
+</h2>
+
+<p class="urdu">
+ آپ پر اللہ کی سلامتی، رحمت اور اس کی برکتیں نازل ہوں۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+In the Name of Allah we enter and in the Name of Allah we leave.
+</p>
+
+</div>
+
+</div>
+
+<!-- ================= EIGHTH DUA ================= -->
+
+<div class="dua-card">
+
+<div class="dua-header" onclick="toggleDua(this)">
+<div>
+<h3>گھر سے نکلنے کی دعا</h3>
+</div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+
+<h2 class="arabic">
+بِسْمِ اللَّهِ تَوَكَّلْتُ عَلَى اللَّهِ
+</h2>
+
+<p class="urdu">
+اللہ کے نام سے، میں نے اللہ پر بھروسہ کیا۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+In the Name of Allah, I place my trust in Allah.
+</p>
+
+</div>
+
+</div>
+
+<!-- ================= NINTH DUA ================= -->
+
+<div class="dua-card">
+
+<div class="dua-header" onclick="toggleDua(this)">
+<div>
+<h3>پڑھائی شروع کرنے کی دعا</h3>
+</div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+
+<h2 class="arabic">
+رَبِّ زِدْنِي عِلْمًا
+</h2>
+
+<p class="urdu">
+اے میرے رب! میرے علم میں اضافہ فرما۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+My Lord, increase me in knowledge.
+</p>
+
+</div>
+
+</div>
+
+<!-- ================= TENTH DUA ================= -->
+
+<div class="dua-card">
+
+<div class="dua-header" onclick="toggleDua(this)">
+<div>
+<h3>سفر کی دعا</h3>
+</div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+
+<h2 class="arabic">
+سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَذَا وَمَا كُنَّا لَهُ مُقْرِنِينَ وَإِنَّا إِلَى رَبِّنَا لَمُنْقَلِبُونَ
+</h2>
+
+<p class="urdu">
+پاک ہے وہ ذات جس نے اس سواری کو ہمارے لیے مسخر کر دیا، حالانکہ ہم اسے قابو میں لانے کی طاقت نہیں رکھتے تھے، اور بیشک ہم اپنے رب ہی کی طرف لوٹ کر جانے والے ہیں
+</p>
+
+<p class="english">
+<b>English:</b><br>
+Glory be to Him who has subjected this to us.
+</p>
+
+</div>
+
+</div>
+
+
+
+
+     
+     
+     
+     
+     
+     <!-- ================= ELEVENTH DUA ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>وضو سے پہلے کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">بِسْمِ اللَّهِ</h2>
+<p class="urdu">اللہ کے نام سے۔</p>
+<p class="english"><b>English:</b><br>In the Name of Allah.</p>
+</div>
+</div>
+
+<!-- ================= TWELFTH DUA ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>وضو کے بعد کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">أَشْهَدُ أَنْ لَا إِلٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ</h2>
+<p class="urdu">میں گواہی دیتا ہوں کہ اللہ کے سوا کوئی معبود نہیں۔</p>
+<p class="english"><b>English:</b><br>I bear witness that none has the right to be worshipped except Allah.</p>
+</div>
+</div>
+
+<!-- ================= THIRTEENTH DUA ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>باتھ روم میں داخل ہونے کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْخُبُثِ وَالْخَبَائِثِ</h2>
+<p class="urdu">اے اللہ! میں ناپاک جنات سے تیری پناہ مانگتا ہوں۔</p>
+<p class="english"><b>English:</b><br>O Allah, I seek refuge in You from evil.</p>
+</div>
+</div>
+
+<!-- ================= FOURTEENTH DUA ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>باتھ روم سے نکلنے کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">غُفْرَانَكَ</h2>
+<p class="urdu">اے اللہ! میں تیری مغفرت چاہتا ہوں۔</p>
+<p class="english"><b>English:</b><br>I seek Your forgiveness.</p>
+</div>
+</div>
+
+<!-- ================= FIFTEENTH DUA ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>آئینہ دیکھنے کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">اللَّهُمَّ كَمَا حَسَّنْتَ خَلْقِي فَحَسِّنْ خُلُقِي</h2>
+<p class="urdu">اے اللہ! جیسے تو نے میری صورت اچھی بنائی ویسے ہی میرا اخلاق بھی اچھا بنا۔</p>
+<p class="english"><b>English:</b><br>O Allah, improve my character as You have made my appearance beautiful.</p>
+</div>
+</div>
+
+<!-- ================= SIXTEENTH DUA ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>لباس پہننے کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">الْحَمْدُ لِلَّهِ الَّذِي كَسَانِي هَذَا</h2>
+<p class="urdu">تمام تعریف اللہ کے لیے ہے جس نے مجھے یہ لباس عطا فرمایا۔</p>
+<p class="english"><b>English:</b><br>All praise is for Allah who clothed me with this.</p>
+</div>
+</div>
+
+<!-- ================= SEVENTEENTH DUA ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>نیا لباس پہننے کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">اللَّهُمَّ لَكَ الْحَمْدُ أَنْتَ كَسَوْتَنِيهِ</h2>
+<p class="urdu">اے اللہ! تمام تعریف تیرے لیے ہے، تو نے مجھے یہ لباس عطا کیا۔</p>
+<p class="english"><b>English:</b><br>O Allah, all praise belongs to You for clothing me.</p>
+</div>
+</div>
+
+<!-- ================= EIGHTEENTH DUA ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>چھینک آنے کے بعد</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">الْحَمْدُ لِلَّهِ</h2>
+<p class="urdu">تمام تعریف اللہ کے لیے ہے۔</p>
+<p class="english"><b>English:</b><br>All praise is for Allah.</p>
+</div>
+</div>
+
+<!-- ================= NINETEENTH DUA ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>بارش کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">اللَّهُمَّ صَيِّبًا نَافِعًا</h2>
+<p class="urdu">اے اللہ! اسے نفع بخش بارش بنا۔</p>
+<p class="english"><b>English:</b><br>O Allah, make it beneficial rain.</p>
+</div>
+</div>
+
+<!-- ================= TWENTIETH DUA ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>اذان کے بعد کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">اللَّهُمَّ رَبَّ هَذِهِ الدَّعْوَةِ التَّامَّةِ</h2>
+<p class="urdu">اے اللہ! اس کامل دعوت اور قائم ہونے والی نماز کے رب۔</p>
+<p class="english"><b>English:</b><br>O Allah, Lord of this perfect call and established prayer.</p>
+</div>
+</div>
+     
+     <!-- ================= NEW DUA 1 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>والدین کے لیے دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+رَبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا
+</h2>
+
+<p class="urdu">
+اے میرے رب! میرے والدین پر رحم فرما، جیسے انہوں نے بچپن میں میری پرورش کی۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+My Lord, have mercy upon my parents as they brought me up when I was small.
+</p>
+</div>
+</div>
+
+<!-- ================= NEW DUA 2 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>بیماری کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+اللَّهُمَّ رَبَّ النَّاسِ أَذْهِبِ الْبَأْسَ وَاشْفِ أَنْتَ الشَّافِي
+</h2>
+
+<p class="urdu">
+اے لوگوں کے رب! بیماری دور فرما، شفا عطا فرما، تو ہی شفا دینے والا ہے۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+O Lord of mankind, remove the illness and grant healing.
+</p>
+</div>
+</div>
+
+<!-- ================= NEW DUA 3 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>رزق کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+اللَّهُمَّ اكْفِنِي بِحَلَالِكَ عَنْ حَرَامِكَ
+</h2>
+
+<p class="urdu">
+اے اللہ! مجھے اپنے حلال کے ذریعے حرام سے بچا۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+O Allah, suffice me with Your lawful provision.
+</p>
+</div>
+</div>
+
+<!-- ================= NEW DUA 4 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>قرض سے نجات کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْهَمِّ وَالْحَزَنِ
+</h2>
+
+<p class="urdu">
+اے اللہ! میں غم، فکر اور قرض سے تیری پناہ مانگتا ہوں۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+O Allah, I seek refuge in You from anxiety and debt.
+</p>
+</div>
+</div>
+
+<!-- ================= NEW DUA 5 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>ایمان پر ثابت قدمی کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+يَا مُقَلِّبَ الْقُلُوبِ ثَبِّتْ قَلْبِي عَلَى دِينِكَ
+</h2>
+
+<p class="urdu">
+اے دلوں کو پھیرنے والے! میرے دل کو اپنے دین پر ثابت رکھ۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+O Turner of hearts, keep my heart firm upon Your religion.
+</p>
+</div>
+</div>
+
+<!-- ================= NEW DUA 6 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>غم دور ہونے کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+حَسْبِيَ اللَّهُ وَنِعْمَ الْوَكِيلُ
+</h2>
+
+<p class="urdu">
+میرے لیے اللہ کافی ہے، اور وہ بہترین کارساز ہے۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+Allah is sufficient for me, and He is the best disposer of affairs.
+</p>
+</div>
+</div>
+
+<!-- ================= NEW DUA 7 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>جنت کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+اللَّهُمَّ إِنِّي أَسْأَلُكَ الْجَنَّةَ
+</h2>
+
+<p class="urdu">
+اے اللہ! میں تجھ سے جنت کا سوال کرتا ہوں۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+O Allah, I ask You for Paradise.
+</p>
+</div>
+</div>
+
+<!-- ================= NEW DUA 8 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>جہنم سے پناہ کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+اللَّهُمَّ أَجِرْنِي مِنَ النَّارِ
+</h2>
+
+<p class="urdu">
+اے اللہ! مجھے جہنم کی آگ سے بچا۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+O Allah, protect me from the Fire.
+</p>
+</div>
+</div>
+
+<!-- ================= NEW DUA 9 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>گناہوں کی معافی کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+رَبِّ اغْفِرْ لِي وَتُبْ عَلَيَّ
+</h2>
+
+<p class="urdu">
+اے میرے رب! مجھے بخش دے اور میری توبہ قبول فرما۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+My Lord, forgive me and accept my repentance.
+</p>
+</div>
+</div>
+
+<!-- ================= NEW DUA 10 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>خیر مانگنے کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ
+</h2>
+
+<p class="urdu">
+اے ہمارے رب! ہمیں دنیا میں بھی بھلائی عطا فرما، آخرت میں بھی بھلائی عطا فرما، اور ہمیں جہنم کے عذاب سے بچا۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+Our Lord, grant us good in this world and in the Hereafter and protect us from the punishment of the Fire.
+</p>
+</div>
+</div>
+     <!-- ================= DUA 21 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>چاند دیکھنے کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+اللَّهُمَّ أَهِلَّهُ عَلَيْنَا بِالْأَمْنِ وَالإِيمَانِ وَالسَّلَامَةِ وَالإِسْلَامِ
+</h2>
+
+<p class="urdu">
+اے اللہ! اس چاند کو ہمارے لیے امن، ایمان، سلامتی اور اسلام کے ساتھ طلوع فرما۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+O Allah, let this moon appear over us with security, faith, peace and Islam.
+</p>
+</div>
+</div>
+
+<!-- ================= DUA 22 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>بازار میں داخل ہونے کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+لَا إِلٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، يُحْيِي وَيُمِيتُ وَهُوَ حَيٌّ لَا يَمُوتُ، بِيَدِهِ الْخَيْرُ، وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ
+</h2>
+
+<p class="urdu">
+اللہ کے سوا کوئی معبود نہیں، وہ اکیلا ہے، اس کا کوئی شریک نہیں، بادشاہی اسی کی ہے، تعریف اسی کے لیے ہے، وہی زندہ کرتا اور مارتا ہے۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+There is no god but Allah alone. He has no partner. His is the dominion and all praise.
+</p>
+</div>
+</div>
+
+<!-- ================= DUA 23 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>غم و پریشانی کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+لَا إِلٰهَ إِلَّا أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِينَ
+</h2>
+
+<p class="urdu">
+تیرے سوا کوئی معبود نہیں، تو پاک ہے، بے شک میں ہی قصوروار ہوں۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+There is no deity except You. Glory be to You. Indeed, I was among the wrongdoers.
+</p>
+</div>
+</div>
+
+<!-- ================= DUA 24 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>دل کی ہدایت کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+رَبَّنَا لَا تُزِغْ قُلُوبَنَا بَعْدَ إِذْ هَدَيْتَنَا
+</h2>
+
+<p class="urdu">
+اے ہمارے رب! ہدایت دینے کے بعد ہمارے دل ٹیڑھے نہ کر۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+Our Lord, do not let our hearts deviate after You have guided us.
+</p>
+</div>
+</div>
+
+<!-- ================= DUA 25 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>علم اور حکمت کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+رَبِّ هَبْ لِي حُكْمًا وَأَلْحِقْنِي بِالصَّالِحِينَ
+</h2>
+
+<p class="urdu">
+اے میرے رب! مجھے حکمت عطا فرما اور مجھے نیک لوگوں میں شامل فرما۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+My Lord, grant me wisdom and join me with the righteous.
+</p>
+</div>
+</div>
+
+<!-- ================= DUA 26 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>اولاد کے لیے دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+رَبِّ هَبْ لِي مِنَ الصَّالِحِينَ
+</h2>
+
+<p class="urdu">
+اے میرے رب! مجھے نیک اولاد عطا فرما۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+My Lord, grant me righteous children.
+</p>
+</div>
+</div>
+
+<!-- ================= DUA 27 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>ایمان کے ساتھ وفات کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+تَوَفَّنِي مُسْلِمًا وَأَلْحِقْنِي بِالصَّالِحِينَ
+</h2>
+
+<p class="urdu">
+اے اللہ! مجھے اسلام پر وفات دے اور نیک لوگوں کے ساتھ ملا دے۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+Cause me to die as a Muslim and join me with the righteous.
+</p>
+</div>
+</div>
+
+<!-- ================= DUA 28 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>آسانی کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+رَبِّ اشْرَحْ لِي صَدْرِي وَيَسِّرْ لِي أَمْرِي
+</h2>
+
+<p class="urdu">
+اے میرے رب! میرا سینہ کھول دے اور میرا کام آسان فرما۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+My Lord, expand my chest and make my task easy.
+</p>
+</div>
+</div>
+
+<!-- ================= DUA 29 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>استغفار کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+أَسْتَغْفِرُ اللَّهَ رَبِّي مِنْ كُلِّ ذَنْبٍ وَأَتُوبُ إِلَيْهِ
+</h2>
+
+<p class="urdu">
+میں اللہ سے اپنے تمام گناہوں کی معافی مانگتا ہوں اور اسی کی طرف توبہ کرتا ہوں۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+I seek forgiveness from Allah for all my sins and repent to Him.
+</p>
+</div>
+</div>
+
+<!-- ================= DUA 30 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>دنیا و آخرت کی بھلائی کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا
+</h2>
+
+<p class="urdu">
+اے ہمارے رب! ہمیں ہماری بیویوں اور اولاد سے آنکھوں کی ٹھنڈک عطا فرما اور ہمیں پرہیزگاروں کا پیشوا بنا۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+Our Lord, grant us comfort in our spouses and children and make us leaders of the righteous.
+</p>
+</div>
+</div>
+<!-- ================= DUA 31 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>کسی کو رخصت کرتے وقت کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+أَسْتَوْدِعُ اللَّهَ دِينَكَ وَأَمَانَتَكَ وَخَوَاتِيمَ عَمَلِكَ
+</h2>
+
+<p class="urdu">
+میں تمہارے دین، امانت اور آخری اعمال کو اللہ کے سپرد کرتا ہوں۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+I entrust your religion, your trust and your final deeds to Allah.
+</p>
+
+</div>
+</div>
+
+<!-- ================= DUA 32 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>مصیبت کے وقت کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+إِنَّا لِلَّهِ وَإِنَّا إِلَيْهِ رَاجِعُونَ
+</h2>
+
+<p class="urdu">
+بیشک ہم اللہ ہی کے ہیں اور اسی کی طرف لوٹ کر جانے والے ہیں۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+Indeed, we belong to Allah and to Him we shall return.
+</p>
+
+</div>
+</div>
+
+<!-- ================= DUA 33 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>کسی بیمار کی عیادت کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+لَا بَأْسَ طَهُورٌ إِنْ شَاءَ اللَّهُ
+</h2>
+
+<p class="urdu">
+کوئی حرج نہیں، ان شاء اللہ یہ بیماری گناہوں کی پاکیزگی کا سبب ہے۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+No harm, it is a purification, if Allah wills.
+</p>
+
+</div>
+</div>
+
+<!-- ================= DUA 34 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>ہوا تیز چلنے کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+اللَّهُمَّ إِنِّي أَسْأَلُكَ خَيْرَهَا
+</h2>
+
+<p class="urdu">
+اے اللہ! میں تجھ سے اس ہوا کی بھلائی مانگتا ہوں۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+O Allah, I ask You for the good of this wind.
+</p>
+
+</div>
+</div>
+
+<!-- ================= DUA 35 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>بجلی کڑکنے کے وقت کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+سُبْحَانَ الَّذِي يُسَبِّحُ الرَّعْدُ بِحَمْدِهِ
+</h2>
+
+<p class="urdu">
+پاک ہے وہ ذات جس کی حمد کے ساتھ گرج بھی تسبیح کرتی ہے۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+Glory be to the One whom the thunder glorifies with His praise.
+</p>
+
+</div>
+</div>
+
+<!-- ================= DUA 36 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>کسی نعمت کو دیکھ کر</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+مَا شَاءَ اللَّهُ لَا قُوَّةَ إِلَّا بِاللَّهِ
+</h2>
+
+<p class="urdu">
+جو اللہ نے چاہا، اللہ کے سوا کسی میں طاقت نہیں۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+What Allah has willed; there is no power except with Allah.
+</p>
+
+</div>
+</div>
+
+<!-- ================= DUA 37 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>کسی کی تعریف کرتے وقت</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+بَارَكَ اللَّهُ لَكَ
+</h2>
+
+<p class="urdu">
+اللہ تمہیں برکت عطا فرمائے۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+May Allah bless you.
+</p>
+
+</div>
+</div>
+
+<!-- ================= DUA 38 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>خوشی کی خبر ملنے پر</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+الْحَمْدُ لِلَّهِ الَّذِي بِنِعْمَتِهِ تَتِمُّ الصَّالِحَاتُ
+</h2>
+
+<p class="urdu">
+تمام تعریف اللہ کے لیے ہے جس کی نعمت سے نیک کام مکمل ہوتے ہیں۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+All praise belongs to Allah by whose favor good deeds are completed.
+</p>
+
+</div>
+</div>
+
+<!-- ================= DUA 39 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>غم سے حفاظت کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ
+</h2>
+
+<p class="urdu">
+اللہ ہمارے لیے کافی ہے اور وہ بہترین کارساز ہے۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+Allah is sufficient for us and He is the Best Disposer of affairs.
+</p>
+
+</div>
+</div>
+
+<!-- ================= DUA 40 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>مجلس کے اختتام کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+سُبْحَانَكَ اللَّهُمَّ وَبِحَمْدِكَ، أَشْهَدُ أَنْ لَا إِلٰهَ إِلَّا أَنْتَ، أَسْتَغْفِرُكَ وَأَتُوبُ إِلَيْكَ
+</h2>
+
+<p class="urdu">
+اے اللہ! تو پاک ہے، تیری ہی تعریف ہے۔ میں گواہی دیتا ہوں کہ تیرے سوا کوئی معبود نہیں۔ میں تجھ سے بخشش مانگتا ہوں اور تیری طرف توبہ کرتا ہوں۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+Glory and praise be to You, O Allah. I bear witness that there is no god but You. I seek Your forgiveness and turn to You in repentance.
+</p>
+
+</div>
+</div>
+<!-- ================= DUA 41 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>گھر میں داخل ہوتے وقت سلام</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+السَّلَامُ عَلَيْنَا وَعَلَى عِبَادِ اللَّهِ الصَّالِحِينَ
+</h2>
+
+<p class="urdu">
+ہم پر اور اللہ کے نیک بندوں پر سلامتی ہو۔
+</p>
+
+<p class="english"><b>English:</b><br>Peace be upon us and upon the righteous servants of Allah.</p>
+</div>
+</div>
+
+<!-- ================= DUA 42 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>نفع بخش علم کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+اللَّهُمَّ إِنِّي أَسْأَلُكَ عِلْمًا نَافِعًا وَرِزْقًا طَيِّبًا وَعَمَلًا مُتَقَبَّلًا
+</h2>
+
+<p class="urdu">
+اے اللہ! میں تجھ سے نفع بخش علم، پاکیزہ رزق اور قبول ہونے والے عمل کا سوال کرتا ہوں۔
+</p>
+
+<p class="english"><b>English:</b><br>O Allah, grant me beneficial knowledge, lawful provision and accepted deeds.</p>
+</div>
+</div>
+
+<!-- ================= DUA 43 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>دل کے سکون کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+رَبِّ اجْعَلْنِي مُقِيمَ الصَّلَاةِ وَمِنْ ذُرِّيَّتِي
+</h2>
+
+<p class="urdu">
+اے میرے رب! مجھے اور میری اولاد کو نماز قائم کرنے والا بنا۔
+</p>
+
+<p class="english"><b>English:</b><br>My Lord, make me and my children steadfast in prayer.</p>
+</div>
+</div>
+
+<!-- ================= DUA 44 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>گھر میں برکت کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+رَبِّ أَنْزِلْنِي مُنْزَلًا مُبَارَكًا وَأَنْتَ خَيْرُ الْمُنْزِلِينَ
+</h2>
+
+<p class="urdu">
+اے میرے رب! مجھے بابرکت جگہ اتار اور تو بہترین جگہ عطا کرنے والا ہے۔
+</p>
+
+<p class="english"><b>English:</b><br>My Lord, let me land at a blessed place.</p>
+</div>
+</div>
+
+<!-- ================= DUA 45 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>آسان کام کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+اللَّهُمَّ لَا سَهْلَ إِلَّا مَا جَعَلْتَهُ سَهْلًا
+</h2>
+
+<p class="urdu">
+اے اللہ! آسانی صرف وہی ہے جسے تو آسان کر دے۔
+</p>
+
+<p class="english"><b>English:</b><br>O Allah, nothing is easy except what You make easy.</p>
+</div>
+</div>
+
+<!-- ================= DUA 46 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>صبر کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+رَبَّنَا أَفْرِغْ عَلَيْنَا صَبْرًا
+</h2>
+
+<p class="urdu">
+اے ہمارے رب! ہم پر صبر نازل فرما۔
+</p>
+
+<p class="english"><b>English:</b><br>Our Lord, pour upon us patience.</p>
+</div>
+</div>
+
+<!-- ================= DUA 47 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>نیک عمل کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+رَبِّ أَوْزِعْنِي أَنْ أَشْكُرَ نِعْمَتَكَ
+</h2>
+
+<p class="urdu">
+اے میرے رب! مجھے اپنی نعمتوں کا شکر ادا کرنے کی توفیق دے۔
+</p>
+
+<p class="english"><b>English:</b><br>My Lord, inspire me to be grateful for Your blessings.</p>
+</div>
+</div>
+
+<!-- ================= DUA 48 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>نظر بد سے حفاظت کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ كُلِّ شَيْطَانٍ وَهَامَّةٍ وَمِنْ كُلِّ عَيْنٍ لَامَّةٍ
+</h2>
+
+<p class="urdu">
+میں اللہ کے کامل کلمات کے ذریعے ہر شیطان، ہر نقصان دہ چیز اور ہر بری نظر سے پناہ مانگتا ہوں۔
+</p>
+
+<p class="english"><b>English:</b><br>I seek refuge in the perfect words of Allah from every devil and every evil eye.</p>
+</div>
+</div>
+
+<!-- ================= DUA 49 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>مصیبت سے حفاظت کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ جَهْدِ الْبَلَاءِ
+</h2>
+
+<p class="urdu">
+اے اللہ! میں سخت آزمائش سے تیری پناہ مانگتا ہوں۔
+</p>
+
+<p class="english"><b>English:</b><br>O Allah, I seek refuge in You from severe trials.</p>
+</div>
+</div>
+
+<!-- ================= DUA 50 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>ہر حال میں شکر کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+الْحَمْدُ لِلَّهِ عَلَى كُلِّ حَالٍ
+</h2>
+
+<p class="urdu">
+ہر حال میں تمام تعریفیں اللہ ہی کے لیے ہیں۔
+</p>
+
+<p class="english"><b>English:</b><br>All praise belongs to Allah in every situation.</p>
+</div>
+</div>
+<!-- ================= DUA 51 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>وضو شروع کرنے کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+بِسْمِ اللَّهِ
+</h2>
+
+<p class="urdu">
+میں اللہ کے نام سے وضو شروع کرتا ہوں۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+In the Name of Allah.
+</p>
+</div>
+</div>
+
+<!-- ================= DUA 52 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>وضو کے بعد کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+أَشْهَدُ أَنْ لَا إِلٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ
+</h2>
+
+<p class="urdu">
+میں گواہی دیتا ہوں کہ اللہ کے سوا کوئی معبود نہیں، وہ اکیلا ہے، اس کا کوئی شریک نہیں، اور محمد ﷺ اس کے بندے اور رسول ہیں۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+I bear witness that none has the right to be worshipped except Allah alone, and Muhammad ﷺ is His servant and Messenger.
+</p>
+</div>
+</div>
+
+<!-- ================= DUA 53 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>آئینہ دیکھنے کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+اللَّهُمَّ كَمَا حَسَّنْتَ خَلْقِي فَحَسِّنْ خُلُقِي
+</h2>
+
+<p class="urdu">
+اے اللہ! جس طرح تو نے میری صورت اچھی بنائی، اسی طرح میرا اخلاق بھی اچھا بنا دے۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+O Allah, just as You made my appearance beautiful, make my character beautiful too.
+</p>
+</div>
+</div>
+
+<!-- ================= DUA 54 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>نئے کپڑے پہننے کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+اللَّهُمَّ لَكَ الْحَمْدُ أَنْتَ كَسَوْتَنِيهِ
+</h2>
+
+<p class="urdu">
+اے اللہ! تمام تعریف تیرے لیے ہے، تو ہی نے مجھے یہ لباس عطا فرمایا۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+O Allah, all praise is for You. You have clothed me with this garment.
+</p>
+</div>
+</div>
+
+<!-- ================= DUA 55 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>بارش رکنے کے بعد کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+مُطِرْنَا بِفَضْلِ اللَّهِ وَرَحْمَتِهِ
+</h2>
+
+<p class="urdu">
+ہم پر اللہ کے فضل اور رحمت سے بارش ہوئی۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+We have received rain by the grace and mercy of Allah.
+</p>
+</div>
+</div>
+
+<!-- ================= DUA 56 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>چھینک سننے پر جواب</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+يَرْحَمُكَ اللَّهُ
+</h2>
+
+<p class="urdu">
+اللہ تم پر رحم فرمائے۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+May Allah have mercy on you.
+</p>
+</div>
+</div>
+
+<!-- ================= DUA 57 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>چھینک کے بعد کہنے کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+الْحَمْدُ لِلَّهِ
+</h2>
+
+<p class="urdu">
+تمام تعریفیں اللہ کے لیے ہیں۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+All praise is for Allah.
+</p>
+</div>
+</div>
+
+<!-- ================= DUA 58 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>کسی کو مبارک باد دینے کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+بَارَكَ اللَّهُ فِيكَ
+</h2>
+
+<p class="urdu">
+اللہ تم میں برکت عطا فرمائے۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+May Allah bless you.
+</p>
+</div>
+</div>
+
+<!-- ================= DUA 59 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>والدین کے لیے دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+رَبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا
+</h2>
+
+<p class="urdu">
+اے میرے رب! میرے والدین پر رحم فرما، جیسے انہوں نے بچپن میں میری پرورش کی۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+My Lord, have mercy upon my parents as they raised me when I was young.
+</p>
+</div>
+</div>
+
+<!-- ================= DUA 60 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>ایمان پر ثابت قدمی کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+<h2 class="arabic">
+يَا مُقَلِّبَ الْقُلُوبِ ثَبِّتْ قَلْبِي عَلَى دِينِكَ
+</h2>
+
+<p class="urdu">
+اے دلوں کو پھیرنے والے! میرے دل کو اپنے دین پر ثابت قدم رکھ۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+O Turner of the hearts, keep my heart firm upon Your religion.
+</p>
+</div>
+</div>
+<!-- ================= DUA 61 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>غصہ آنے کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+
+<h2 class="arabic">
+أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ
+</h2>
+
+<p class="urdu">
+میں شیطان مردود سے اللہ کی پناہ مانگتا ہوں۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+I seek refuge in Allah from Satan, the accursed.
+</p>
+
+</div>
+</div>
+
+<!-- ================= DUA 62 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>قرض سے حفاظت کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+
+<h2 class="arabic">
+اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْمَأْثَمِ وَالْمَغْرَمِ
+</h2>
+
+<p class="urdu">
+اے اللہ! میں گناہ اور قرض کے بوجھ سے تیری پناہ مانگتا ہوں۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+O Allah, I seek refuge in You from sin and debt.
+</p>
+
+</div>
+</div>
+
+<!-- ================= DUA 63 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>بے چینی دور ہونے کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+
+<h2 class="arabic">
+حَسْبِيَ اللَّهُ لَا إِلٰهَ إِلَّا هُوَ عَلَيْهِ تَوَكَّلْتُ
+</h2>
+
+<p class="urdu">
+میرے لیے اللہ ہی کافی ہے، اسی پر میں نے بھروسہ کیا۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+Allah is sufficient for me; I place my trust in Him.
+</p>
+
+</div>
+</div>
+
+<!-- ================= DUA 64 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>رزق میں برکت کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+
+<h2 class="arabic">
+اللَّهُمَّ بَارِكْ لَنَا فِيمَا رَزَقْتَنَا
+</h2>
+
+<p class="urdu">
+اے اللہ! ہمیں جو رزق عطا فرمایا ہے اس میں برکت عطا فرما۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+O Allah, bless the provision You have given us.
+</p>
+
+</div>
+</div>
+
+<!-- ================= DUA 65 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>بیماری سے شفا کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+
+<h2 class="arabic">
+اللَّهُمَّ اشْفِنِي شِفَاءً لَا يُغَادِرُ سَقَمًا
+</h2>
+
+<p class="urdu">
+اے اللہ! مجھے ایسی کامل شفا عطا فرما جس کے بعد کوئی بیماری باقی نہ رہے۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+O Allah, grant me complete healing that leaves no illness behind.
+</p>
+
+</div>
+</div>
+
+<!-- ================= DUA 66 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>اولاد کے لیے دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+
+<h2 class="arabic">
+رَبِّ هَبْ لِي مِنَ الصَّالِحِينَ
+</h2>
+
+<p class="urdu">
+اے میرے رب! مجھے نیک اولاد عطا فرما۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+My Lord, grant me righteous offspring.
+</p>
+
+</div>
+</div>
+
+<!-- ================= DUA 67 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>گناہوں کی معافی کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+
+<h2 class="arabic">
+رَبِّ اغْفِرْ لِي وَتُبْ عَلَيَّ إِنَّكَ أَنْتَ التَّوَّابُ الرَّحِيمُ
+</h2>
+
+<p class="urdu">
+اے میرے رب! مجھے بخش دے اور میری توبہ قبول فرما، بے شک تو بہت توبہ قبول کرنے والا، نہایت رحم والا ہے۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+My Lord, forgive me and accept my repentance. Indeed, You are the Acceptor of repentance, the Most Merciful.
+</p>
+
+</div>
+</div>
+
+<!-- ================= DUA 68 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>جنت مانگنے کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+
+<h2 class="arabic">
+اللَّهُمَّ إِنِّي أَسْأَلُكَ الْجَنَّةَ
+</h2>
+
+<p class="urdu">
+اے اللہ! میں تجھ سے جنت کا سوال کرتا ہوں۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+O Allah, I ask You for Paradise.
+</p>
+
+</div>
+</div>
+
+<!-- ================= DUA 69 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>جہنم سے پناہ کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+
+<h2 class="arabic">
+اللَّهُمَّ أَجِرْنِي مِنَ النَّارِ
+</h2>
+
+<p class="urdu">
+اے اللہ! مجھے جہنم کی آگ سے بچا لے۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+O Allah, protect me from the Fire.
+</p>
+
+</div>
+</div>
+
+<!-- ================= DUA 70 ================= -->
+
+<div class="dua-card">
+<div class="dua-header" onclick="toggleDua(this)">
+<div><h3>دنیا و آخرت کی بھلائی کی دعا</h3></div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+
+<h2 class="arabic">
+رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ
+</h2>
+
+<p class="urdu">
+اے ہمارے رب! ہمیں دنیا میں بھی بھلائی عطا فرما، آخرت میں بھی بھلائی عطا فرما، اور ہمیں جہنم کے عذاب سے بچا۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+Our Lord, grant us good in this world and good in the Hereafter, and protect us from the punishment of the Fire.
+</p>
+
+</div>
+</div>
+<div class="dua-card">
+
+<div class="dua-header" onclick="toggleDua(this)">
+<div>
+<h3>میت کے لیے دعا</h3>
+</div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+
+<h2 class="arabic">
+اللَّهُمَّ اغْفِرْ لَهُ وَارْحَمْهُ وَعَافِهِ وَاعْفُ عَنْهُ وَأَكْرِمْ نُزُلَهُ وَوَسِّعْ مُدْخَلَهُ وَاغْسِلْهُ بِالْمَاءِ وَالثَّلْجِ وَالْبَرَدِ
+</h2>
+
+<p class="urdu">
+اے اللہ! اس کی مغفرت فرما، اس پر رحم فرما، اسے عافیت عطا فرما، اسے معاف فرما، اس کی مہمانی اچھی فرما، اس کی قبر کو کشادہ فرما، اور اسے پانی، برف اور اولوں سے دھو دے۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+O Allah, forgive him, have mercy on him, grant him safety, pardon him, honor his resting place, expand his grave, and wash him with water, snow and hail.
+</p>
+
+<p><b>حوالہ:</b> صحیح مسلم: 963</p>
+
+</div>
+</div>
+<div class="dua-card">
+
+<div class="dua-header" onclick="toggleDua(this)">
+<div>
+<h3>قبرستان میں داخل ہونے کی دعا</h3>
+</div>
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="dua-content">
+
+<h2 class="arabic">
+السَّلَامُ عَلَيْكُمْ أَهْلَ الدِّيَارِ مِنَ الْمُؤْمِنِينَ وَالْمُسْلِمِينَ، وَإِنَّا إِنْ شَاءَ اللَّهُ بِكُمْ لَلَاحِقُونَ، نَسْأَلُ اللَّهَ لَنَا وَلَكُمُ الْعَافِيَةَ
+</h2>
+
+<p class="urdu">
+اے مومنو اور مسلمانو کے گھروالو! تم پر سلام ہو۔ ان شاء اللہ ہم بھی تم سے آ ملنے والے ہیں۔ ہم اللہ تعالیٰ سے اپنے لیے اور تمہارے لیے عافیت کا سوال کرتے ہیں۔
+</p>
+
+<p class="english">
+<b>English:</b><br>
+Peace be upon you, O inhabitants of these graves, believers and Muslims. If Allah wills, we will join you. We ask Allah for well-being for us and for you.
+</p>
+
+<p><b>حوالہ:</b> صحیح مسلم: 975</p>
+
+</div>
+</div>
+     
+     
+     
+     
+     
+     
+     
+      <footer class="footer">
+
+<div class="footer-logo">
+    <button class="logo">AF</button>
+
+    <div>
+        <h2>AF Taleem Academy</h2>
+        <p>
+        Modern Islamic Education — Urdu, Arabic,
+        Islamic Studies, Computer Basics and beyond.
+        </p>
+    </div>
+</div>
+
+<div class="footer-box">
+
+<h3>Quick Links</h3>
+
+<a href="#">Courses</a>
+
+<a href="#">Duas</a>
+
+<a href="#">Admission</a>
+
+<a href="#">Contact</a>
+
+</div>
+
+<div class="footer-box">
+
+<h3>Contact</h3>
+
+<p>📧 info@aftaleem.com</p>
+
+<p>📞 Noto available</p>
+
+<p>📍  west champaran Bihar,India</p>
+
+</div>
+
+<div class="footer-box">
+
+<h3>Follow</h3>
+
+<div class="social">
+
+<button><i class="fab fa-whatsapp"></i></button>
+
+<button><i class="fab fa-instagram"></i></button>
+
+<button><i class="fab fa-youtube"></i></button>
+</div>
+<h1>علم نور ہے</h1>
+</div>
+
+</footer>
+     
+        
+         <nav class="bottom-nav">
+
+<a href="index.html" class="active">
+<i data-lucide="house"></i>
+<span>Home</span>
+</a>
+
+<a href="books.html">
+<i data-lucide="book-open"></i>
+<span>Books</span>
+</a>
+
+<a href="notes.html">
+<i data-lucide="file-text"></i>
+<span>Notes</span>
+</a>
+
+<a href="contact.html">
+<i data-lucide="message-circle"></i>
+<span>Contact</span>
+</a>
+
+<a href="login.html">
+<i data-lucide="log-in"></i>
+<span>Login</span>
+</a>
+
+</nav>
+
+<script src="script.js"></script>
+<script>
+/* ===========================
+      DUA PAGE JAVASCRIPT
+=========================== */
+
+// Accordion
+function toggleDua(header){
+
+    const content = header.nextElementSibling;
+    const icon = header.querySelector("i");
+
+    // Close all cards
+    document.querySelectorAll(".dua-content").forEach(item=>{
+        if(item!==content){
+            item.classList.remove("active");
+        }
+    });
+
+    document.querySelectorAll(".dua-header i").forEach(i=>{
+        if(i!==icon){
+            i.style.transform="rotate(0deg)";
+        }
+    });
+
+    // Toggle current card
+    content.classList.toggle("active");
+
+    if(content.classList.contains("active")){
+        icon.style.transform="rotate(180deg)";
+    }else{
+        icon.style.transform="rotate(0deg)";
+    }
+}
+
+// Live Search
+const searchInput=document.getElementById("searchInput");
+
+if(searchInput){
+
+searchInput.addEventListener("keyup",function(){
+
+const value=this.value.toLowerCase();
+
+const cards=document.querySelectorAll(".dua-card");
+
+let total=0;
+
+cards.forEach(card=>{
+
+const text=card.innerText.toLowerCase();
+
+if(text.includes(value)){
+card.style.display="block";
+total++;
+}else{
+card.style.display="none";
+}
+
+});
+
+const count=document.querySelector(".dua-count");
+
+if(count){
+count.innerHTML=total+" Duas Found";
+}
+
+});
+
+}
+
+lucide.createIcons();
+</script>
+</body>
+
+</html>

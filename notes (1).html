@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+            <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <script src="https://unpkg.com/lucide@latest"></script>
+  <title>Urdu</title>
+  <style>
+      
+      .back-btn{
+          margin-top:100px;
+      }
+      .urdu-line{
+          margin-top:100px;
+          margin-left:20px;
+          border:none;
+          border-radius:25px;
+          width:90%;
+          padding:20px 0px;
+          background:#15803d;
+          color:white;
+      }
+      .subject-u{
+          margin-left:20px;
+          color:white;
+      }
+      .sentence-u{
+          color:white;
+          
+      }
+      .urdu-box{
+          margin-top:20px;
+          margin-left:20px;
+          width:90%;
+          padding:20px 0px;
+          border:1px solid black;
+          border-radius:16px;
+          transition:0.3s;
+      }
+      .urdu-logo{
+          margin-left:25px;
+          color:#0a6b5d;
+      }
+      .urdu-box:hover{
+          box-shadow:0px 0px 20px black;
+      }
+      .open{
+          width:30%;
+          margin-left:20px;
+          padding:10px 20px;
+          border-radius:20px;
+          border:none;
+     background:#15803d;
+          color:white;
+          transition:0.3s;
+          text-decoration:none;
+      }
+      .open:hover{
+          background:#15803d;
+          transform:scale(1.05);
+          background:;
+          box-shadow:0px 0px 20px green;
+          color:white;
+      }
+      
+      .search-box{
+    width:90%;
+    margin:80px auto;
+}
+
+.search-input{
+    width:100%;
+    padding:16px 20px;
+    border:none;
+    border-radius:15px;
+    outline:none;
+    font-size:18px;
+    box-sizing:border-box;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.search-input:focus{
+    border:2px solid #15803d;
+}
+.application{
+margin-top:20px;
+  border:1px solid black;
+  width:85%;
+  padding:20px 10px;
+  margin-left:20px;
+  border-radius:12px;
+  box-shadow:0px 0px 20px white;
+  transition:0.35s;
+}
+.application:hover{
+  transform:scale(1.04);
+  box-shadow:0px 0px 20px black;
+}
+.line-dd{
+  text-decoration:none;
+  color:#0a6b5d;
+  font-size:30px;
+  font-weight:bold;
+}
+  </style>
+</head>
+
+<body>
+  <div id="overlay" class="overlay" onclick="closeMenu()"></div>
+
+<div id="sidebar" class="sidebar">
+
+    <span class="close" onclick="closeMenu()">✕</span>
+
+    <a href="index.html" class="active">
+        <i data-lucide="house"></i> Home
+    </a>
+
+    <a href="courses.html">
+        <i data-lucide="book-open"></i> Courses
+    </a>
+
+    <a href="dua.html">
+        <i data-lucide="book-open"></i> Dua
+    </a>
+
+    <a href="books.html">
+        <i data-lucide="book-open"></i> Books
+    </a>
+
+    <a href="notes.html">
+        <i data-lucide="file-text"></i> Notes
+    </a>
+
+    <a href="contact.html">
+        <i data-lucide="message-circle"></i> Contact
+    </a>
+
+</div>
+        
+        <div class="navbar">
+            <div class="left">
+            <div class="menu" onclick="openMenu()">≡</div>
+           <button class="logo">AF</button>
+            <h1 class="text1">AF Taleem Academy</h1>
+            </div>
+            <div class="right">
+            <div class="dark-btn">
+                <i data-lucide="moon"></i>
+            </div>
+            <button class="login">➔Login</button>
+            </div>
+        </div>
+        
+  <a href="index.html" class="back-btn">
+            ➔ Back to aal courses</a>
+        
+        <div class="search-box">
+    <input type="text" id="searchBook"
+    class="search-input"
+    placeholder="🔍 Search Books...">
+</div>
+        
+        
+        <div class="application">
+          <h2 class="line-dd">  
+          Applications درخواشت
+          </h2>
+          <p>Applications in Urdu </p>
+          <a href="application.html" class="open">Open</a>
+        </div>
+        
+        <div class="application">
+            <h2 class="line-dd">
+                Story  .کہانی 
+            </h2>
+            <p>Story in Urdu</p>
+            <a href="Story.html" class="open">Open</a>
+        </div>
+        
+        
+        
+        
+     
+     
+      <footer class="footer">
+
+<div class="footer-logo">
+    <button class="logo">AF</button>
+
+    <div>
+        <h2>AF Taleem Academy</h2>
+        <p>
+        Modern Islamic Education — Urdu, Arabic,
+        Islamic Studies, Computer Basics and beyond.
+        </p>
+    </div>
+</div>
+
+<div class="footer-box">
+
+<h3>Quick Links</h3>
+
+<a href="#">Courses</a>
+
+<a href="#">Duas</a>
+
+<a href="#">Admission</a>
+
+<a href="#">Contact</a>
+
+</div>
+
+<div class="footer-box">
+
+<h3>Contact</h3>
+
+<p>📧 info@aftaleem.com</p>
+
+<p>📞 Noto available</p>
+
+<p>📍  west champaran Bihar,India</p>
+
+</div>
+
+<div class="footer-box">
+
+<h3>Follow</h3>
+
+<div class="social">
+
+<button><i class="fab fa-whatsapp"></i></button>
+
+<button><i class="fab fa-instagram"></i></button>
+
+<button><i class="fab fa-youtube"></i></button>
+</div>
+<h1>علم نور ہے</h1>
+</div>
+
+</footer>
+     
+        
+         <nav class="bottom-nav">
+
+<a href="index.html" class="active">
+<i data-lucide="house"></i>
+<span>Home</span>
+</a>
+
+<a href="books.html">
+<i data-lucide="book-open"></i>
+<span>Books</span>
+</a>
+
+<a href="notes.html">
+<i data-lucide="file-text"></i>
+<span>Notes</span>
+</a>
+
+<a href="contact.html">
+<i data-lucide="message-circle"></i>
+<span>Contact</span>
+</a>
+
+<a href="login.html">
+<i data-lucide="log-in"></i>
+<span>Login</span>
+</a>
+
+</nav>
+
+<script src="script.js"></script>
+                
+</body>
+
+</html>
